@@ -14,7 +14,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import HomeIcon from "@material-ui/icons/Home";
 import HowToRegIcon from "@material-ui/icons/HowToReg";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
-import BookIcon from "@material-ui/icons/Book";
+//import BookIcon from "@material-ui/icons/Book";
 import NavigationDrawer from "../../../shared/components/NavigationDrawer";
 
 const styles = theme => ({
@@ -55,18 +55,18 @@ function NavBar(props) {
       name: "Home",
       icon: <HomeIcon className="text-white" />
     },
-    {
-      link: "/blog",
-      name: "Blog",
-      icon: <BookIcon className="text-white" />
-    },
+    //{
+    //  link: "/blog",
+    //  name: "Blog",
+    //  icon: <BookIcon className="text-white" />
+    //},
     {
       name: "Register",
       onClick: openRegisterDialog,
       icon: <HowToRegIcon className="text-white" />
     },
     {
-      name: "Login",
+      name: "Test Tips",
       onClick: openLoginDialog,
       icon: <LockOpenIcon className="text-white" />
     }
@@ -82,7 +82,7 @@ function NavBar(props) {
               display="inline"
               color="primary"
             >
-              Wa
+              TM
             </Typography>
             <Typography
               variant="h4"
@@ -90,7 +90,7 @@ function NavBar(props) {
               display="inline"
               color="secondary"
             >
-              Ver
+              2D
             </Typography>
           </div>
           <div>
@@ -156,7 +156,8 @@ NavBar.propTypes = {
   handleMobileDrawerClose: PropTypes.func,
   mobileDrawerOpen: PropTypes.bool,
   selectedTab: PropTypes.string,
-  openRegisterDialog: PropTypes.func.isRequired,
+  //openRegisterDialog: PropTypes.func.isRequired,
+  openRegisterForm: PropTypes.func.isRequired,
   openLoginDialog: PropTypes.func.isRequired
 };
 

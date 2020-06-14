@@ -12,7 +12,9 @@ import {
 import FormDialog from "../../../shared/components/FormDialog";
 import HighlightedInformation from "../../../shared/components/HighlightedInformation";
 import ButtonCircularProgress from "../../../shared/components/ButtonCircularProgress";
-import VisibilityPasswordTextField from "../../../shared/components/VisibilityPasswordTextField";
+//import VisibilityPasswordTextField from "../../../shared/components/VisibilityPasswordTextField";
+
+import Grid from '@material-ui/core/Grid';
 
 const styles = (theme) => ({
   link: {
@@ -35,22 +37,16 @@ function RegisterDialog(props) {
   const { setStatus, theme, onClose, openTermsDialog, status, classes } = props;
   const [isLoading, setIsLoading] = useState(false);
   const [hasTermsOfServiceError, setHasTermsOfServiceError] = useState(false);
-  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  //const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const registerTermsCheckbox = useRef();
-  const registerPassword = useRef();
-  const registerPasswordRepeat = useRef();
+
 
   const register = useCallback(() => {
     if (!registerTermsCheckbox.current.checked) {
       setHasTermsOfServiceError(true);
       return;
     }
-    if (
-      registerPassword.current.value !== registerPasswordRepeat.current.value
-    ) {
-      setStatus("passwordsDontMatch");
-      return;
-    }
+
     setStatus(null);
     setIsLoading(true);
     setTimeout(() => {
@@ -60,8 +56,6 @@ function RegisterDialog(props) {
     setIsLoading,
     setStatus,
     setHasTermsOfServiceError,
-    registerPassword,
-    registerPasswordRepeat,
     registerTermsCheckbox,
   ]);
 
@@ -79,143 +73,237 @@ function RegisterDialog(props) {
       hasCloseIcon
       content={
         <Fragment>
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            error={status === "invalidEmail"}
-            label="Email Address"
-            autoFocus
-            autoComplete="off"
-            type="email"
-            onChange={() => {
-              if (status === "invalidEmail") {
-                setStatus(null);
-              }
-            }}
-            FormHelperTextProps={{ error: true }}
-          />
-          <VisibilityPasswordTextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            error={
-              status === "passwordTooShort" || status === "passwordsDontMatch"
-            }
-            label="Password"
-            inputRef={registerPassword}
-            autoComplete="off"
-            onChange={() => {
-              if (
-                status === "passwordTooShort" ||
-                status === "passwordsDontMatch"
-              ) {
-                setStatus(null);
-              }
-            }}
-            helperText={(() => {
-              if (status === "passwordTooShort") {
-                return "Create a password at least 6 characters long.";
-              }
-              if (status === "passwordsDontMatch") {
-                return "Your passwords dont match.";
-              }
-              return null;
-            })()}
-            FormHelperTextProps={{ error: true }}
-            isVisible={isPasswordVisible}
-            onVisibilityChange={setIsPasswordVisible}
-          />
-          <VisibilityPasswordTextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            error={
-              status === "passwordTooShort" || status === "passwordsDontMatch"
-            }
-            label="Repeat Password"
-            inputRef={registerPasswordRepeat}
-            autoComplete="off"
-            onChange={() => {
-              if (
-                status === "passwordTooShort" ||
-                status === "passwordsDontMatch"
-              ) {
-                setStatus(null);
-              }
-            }}
-            helperText={(() => {
-              if (status === "passwordTooShort") {
-                return "Create a password at least 6 characters long.";
-              }
-              if (status === "passwordsDontMatch") {
-                return "Your passwords dont match.";
-              }
-            })()}
-            FormHelperTextProps={{ error: true }}
-            isVisible={isPasswordVisible}
-            onVisibilityChange={setIsPasswordVisible}
-          />
-          <FormControlLabel
-            style={{ marginRight: 0 }}
-            control={
-              <Checkbox
-                color="primary"
-                inputRef={registerTermsCheckbox}
+
+          {/*Name */}
+          <Grid container spacing={2}>
+            <Grid item xs={12} >
+              <TextField
+                variant="outlined"
+                margin="normal"
+                required
+                fullWidth
+                error={status === "null"}
+                label="Name"
+                autoFocus
+                autoComplete="off"
+                type="text"
                 onChange={() => {
-                  setHasTermsOfServiceError(false);
+                  if (status === "null") {
+                    setStatus(null);
+                  }
                 }}
+                FormHelperTextProps={{ error: true }}
               />
-            }
-            label={
-              <Typography variant="body1">
-                I agree to the
-                <span
-                  className={classes.link}
-                  onClick={isLoading ? null : openTermsDialog}
-                  tabIndex={0}
-                  role="button"
-                  onKeyDown={(event) => {
-                    // For screenreaders listen to space and enter events
-                    if (
-                      (!isLoading && event.keyCode === 13) ||
-                      event.keyCode === 32
-                    ) {
-                      openTermsDialog();
-                    }
+            </Grid>
+            <Grid item xs={12} >
+              {/*Mobile */}
+              <TextField
+                variant="outlined"
+                margin="normal"
+                required
+                fullWidth
+                error={status === "null"}
+                label="Mobile"
+                autoComplete="off"
+                type="text"
+                onChange={() => {
+                  if (status === "null") {
+                    setStatus(null);
+                  }
+                }}
+                FormHelperTextProps={{ error: true }}
+              />
+            </Grid>
+
+            {/*Email */}
+            <Grid item xs={12} >
+              <TextField
+                variant="outlined"
+                margin="normal"
+                required
+                fullWidth
+                error={status === "invalidEmail"}
+                label="abc@gmail.com"
+                //autoFocus
+                autoComplete="off"
+                type="email"
+                onChange={() => {
+                  if (status === "invalidEmail") {
+                    setStatus(null);
+                  }
+                }}
+                FormHelperTextProps={{ error: true }}
+              />
+            </Grid>
+
+            {/*Suburb */}
+            <Grid item xs={12} sm={6}>
+              <TextField
+                variant="outlined"
+                margin="normal"
+                required
+                fullWidth
+                error={status === "null"}
+                label="Suburb"
+                autoComplete="off"
+                type="text"
+                onChange={() => {
+                  if (status === "null") {
+                    setStatus(null);
+                  }
+                }}
+                FormHelperTextProps={{ error: true }}
+              />
+            </Grid>
+            {/*Post code */}
+            <Grid item xs={12} sm={6}>
+              <TextField
+                variant="outlined"
+                margin="normal"
+                required
+                fullWidth
+                error={status === "null"}
+                label="Post Code"
+                autoComplete="off"
+                type="text"
+                onChange={() => {
+                  if (status === "null") {
+                    setStatus(null);
+                  }
+                }}
+                FormHelperTextProps={{ error: true }}
+              />
+            </Grid>
+
+            <HighlightedInformation>
+              Enter details below if your Drive Test is pre-booked.
+            </HighlightedInformation>
+
+            {/*DriveTest Date */}
+            <Grid item xs={12} sm={6}>
+              <TextField
+                variant="outlined"
+                margin="normal"
+                //required
+                fullWidth
+                error={status === "invalidDate"}
+                label=""
+                //autoFocus
+                autoComplete="off"
+                type="date"
+                onChange={() => {
+                  if (status === "invalidDate") {
+                    setStatus(null);
+                  }
+                }}
+                FormHelperTextProps={{ error: true }}
+              />
+            </Grid>
+
+            {/*DriveTest Time */}
+            <Grid item xs={12} sm={6}>
+              <TextField
+                variant="outlined"
+                margin="normal"
+                //required
+                fullWidth
+                error={status === "invalidEmail"}
+                label="hh:mm"
+                //autoFocus
+                autoComplete="off"
+                type="time"
+                onChange={() => {
+                  if (status === "invalidEmail") {
+                    setStatus(null);
+                  }
+                }}
+                FormHelperTextProps={{ error: true }}
+              />
+            </Grid>
+
+            {/*DriveTest Center */}
+            <Grid item xs={12} >
+
+              <TextField
+                variant="outlined"
+                margin="normal"
+                //required
+                fullWidth
+                error={status === "invalidCenter"}
+                label="Vicroads Test Center"
+                //autoFocus
+                autoComplete="off"
+                type="text"
+
+
+                onChange={() => {
+                  if (status === "invalidCenter") {
+                    setStatus(null);
+                  }
+                }}
+
+                FormHelperTextProps={{ error: true }}
+              />
+            </Grid>
+
+            <FormControlLabel
+              style={{ marginRight: 0 }}
+              control={
+                <Checkbox
+                  color="primary"
+                  inputRef={registerTermsCheckbox}
+                  onChange={() => {
+                    setHasTermsOfServiceError(false);
                   }}
-                >
-                  {" "}
+                />
+              }
+              label={
+                <Typography variant="body1">
+                  I agree to the
+                <span
+                    className={classes.link}
+                    onClick={isLoading ? null : openTermsDialog}
+                    tabIndex={0}
+                    role="button"
+                    onKeyDown={(event) => {
+                      // For screenreaders listen to space and enter events
+                      if (
+                        (!isLoading && event.keyCode === 13) ||
+                        event.keyCode === 32
+                      ) {
+                        openTermsDialog();
+                      }
+                    }}
+                  >
+                    {" "}
                   terms of service
                 </span>
-              </Typography>
-            }
-          />
-          {hasTermsOfServiceError && (
-            <FormHelperText
-              error
-              style={{
-                display: "block",
-                marginTop: theme.spacing(-1),
-              }}
-            >
-              In order to create an account, you have to accept our terms of
-              service.
-            </FormHelperText>
-          )}
-          {status === "accountCreated" ? (
-            <HighlightedInformation>
-              We have created your account. Please click on the link in the
-              email we have sent to you before logging in.
-            </HighlightedInformation>
-          ) : (
-            <HighlightedInformation>
-              Registration is disabled until we go live.
-            </HighlightedInformation>
-          )}
+                </Typography>
+              }
+            />
+            {hasTermsOfServiceError && (
+              <FormHelperText
+                error
+                style={{
+                  display: "block",
+                  marginTop: theme.spacing(-1),
+                }}
+              >
+                In order to register, you have to accept our terms of
+                service.
+              </FormHelperText>
+            )}
+            {status === "accountCreated" ? (
+              <HighlightedInformation>
+                We have created your account. Please click on the link in the
+                email we have sent to you before logging in.
+              </HighlightedInformation>
+            ) : (
+                <HighlightedInformation>
+                  Registration is disabled until we go live.
+                </HighlightedInformation>
+              )}
+          </Grid>
         </Fragment>
       }
       actions={

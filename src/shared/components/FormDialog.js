@@ -8,14 +8,16 @@ const styles = theme => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    paddingTop: 1,
     paddingBottom: theme.spacing(3),
-    maxWidth: 420
+    maxWidth: 440,
   },
   actions: {
     marginTop: theme.spacing(2)
   },
   dialogPaperScrollPaper: {
-    maxHeight: "none"
+    //maxHeight: "none", 11th June 2020
+    maxHeight: 580,
   },
   dialogContent: {
     paddingTop: 0,
