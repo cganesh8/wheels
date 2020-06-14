@@ -12,7 +12,7 @@ import {
   withWidth,
   isWidthUp
 } from "@material-ui/core";
-import headerImage from "../../dummy_data/images/headerImage.jpg";
+import ldpassImage from "../../dummy_data/images/ldpassImage2.jpg";
 import WaveBorder from "../../../shared/components/WaveBorder";
 
 const styles = theme => ({
@@ -76,7 +76,7 @@ const styles = theme => ({
     boxShadow: theme.shadows[4]
   },
   container: {
-    marginTop: theme.spacing(6),
+    marginTop: theme.spacing(0),
     marginBottom: theme.spacing(12),
     [theme.breakpoints.down("md")]: {
       marginBottom: theme.spacing(9)
@@ -123,8 +123,7 @@ function HeadSection(props) {
                         <Typography
                           variant={isWidthUp("lg", width) ? "h3" : "h4"}
                         >
-                          Free Template for building an SaaS app using
-                          Material-UI
+                          We produce safer drivers based on our structured driving lessons
                         </Typography>
                       </Box>
                       <div>
@@ -133,8 +132,9 @@ function HeadSection(props) {
                             variant={isWidthUp("lg", width) ? "h6" : "body1"}
                             color="textSecondary"
                           >
-                            Lorem ipsum dolor sit amet, consetetur sadipscing
-                            elitr, sed diam nonumy eirmod tempor invidunt
+                            Since 2002, we having being teaching learner drivers to become
+                            competent drivers and helping oversea's drivers with local driving
+                            needs.
                           </Typography>
                         </Box>
                         <Button
@@ -153,7 +153,8 @@ function HeadSection(props) {
                   <Hidden smDown>
                     <Grid item md={6}>
                       <img
-                        src={headerImage}
+                        //src={headerImage}
+                        src={ldpassImage}
                         className={classes.image}
                         alt="header example"
                       />

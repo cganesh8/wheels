@@ -33,7 +33,7 @@ const styles = theme => ({
     [theme.breakpoints.down("xs")]: {
       marginLeft: "auto",
       marginRight: "auto",
-      maxWidth: 340
+      maxWidth: 300
     }
   },
   cardWrapperHighlighted: {
@@ -67,19 +67,20 @@ function PricingSection(props) {
             data-aos="zoom-in-up"
           >
             <PriceCard
-              title="Starter"
+              title="Standard Rate"
               pricing={
                 <span>
-                  $14.99
-                  <Typography display="inline"> / month</Typography>
+                  $60.00
+                  <Typography display="inline"> / hour</Typography>
                 </span>
               }
-              features={["Feature 1", "Feature 2", "Feature 3"]}
+              features={["Pick-Up", "Driving Lesson", "Drop-Off"]}
             />
           </Grid>
           <Grid
             item
-            className={classes.cardWrapperHighlighted}
+            //className={classes.cardWrapperHighlighted}
+            className={classes.cardWrapper}
             xs={12}
             sm={6}
             lg={3}
@@ -87,15 +88,15 @@ function PricingSection(props) {
             data-aos-delay="200"
           >
             <PriceCard
-              highlighted
-              title="Premium"
+              //highlighted
+              title="5 x 1 Hour Lesson"
               pricing={
                 <span>
-                  $29.99
-                  <Typography display="inline"> / month</Typography>
+                  $270.00
+                  <Typography display="inline"> </Typography>
                 </span>
               }
-              features={["Feature 1", "Feature 2", "Feature 3"]}
+              features={["Save", "$30", ""]}
             />
           </Grid>
           <Grid
@@ -108,14 +109,14 @@ function PricingSection(props) {
             data-aos-delay={isWidthUp("md", width) ? "400" : "0"}
           >
             <PriceCard
-              title="Business"
+              title="10 x 1 hour lesson"
               pricing={
                 <span>
-                  $49.99
-                  <Typography display="inline"> / month</Typography>
+                  $530.00
+                  <Typography display="inline"> </Typography>
                 </span>
               }
-              features={["Feature 1", "Feature 2", "Feature 3"]}
+              features={["Save", "$70", ""]}
             />
           </Grid>
           <Grid
@@ -128,14 +129,74 @@ function PricingSection(props) {
             data-aos-delay={isWidthUp("md", width) ? "600" : "200"}
           >
             <PriceCard
-              title="Tycoon"
+              title="Drive Test"
               pricing={
                 <span>
-                  $99.99
-                  <Typography display="inline"> / month</Typography>
+                  $190.00
+                  <Typography display="inline"> </Typography>
                 </span>
               }
-              features={["Feature 1", "Feature 2", "Feature 3"]}
+              features={["Including an hour lesson", "", ""]}
+            />
+          </Grid>
+          <Grid
+            item
+            className={classes.cardWrapper}
+            xs={12}
+            sm={6}
+            lg={3}
+            data-aos="zoom-in-up"
+            data-aos-delay={isWidthUp("md", width) ? "600" : "200"}
+          >
+            <PriceCard
+              title="Drive Test"
+              pricing={
+                <span>
+                  $210.00
+                  <Typography display="inline"> </Typography>
+                </span>
+              }
+              features={["Including 90 mins Lesson", "", ""]}
+            />
+          </Grid>
+          <Grid
+            item
+            className={classes.cardWrapper}
+            xs={12}
+            sm={6}
+            lg={3}
+            data-aos="zoom-in-up"
+            data-aos-delay={isWidthUp("md", width) ? "600" : "200"}
+          >
+            <PriceCard
+              title="Express Drive Test"
+              pricing={
+                <span>
+                  $290.00
+                  <Typography display="inline"> </Typography>
+                </span>
+              }
+              features={["2.50 hours Lesson", "90 mins lesson before drive test", ""]}
+            />
+          </Grid>
+          <Grid
+            item
+            className={classes.cardWrapper}
+            xs={12}
+            sm={6}
+            lg={3}
+            data-aos="zoom-in-up"
+            data-aos-delay={isWidthUp("md", width) ? "600" : "200"}
+          >
+            <PriceCard
+              title="Express Drive Test"
+              pricing={
+                <span>
+                  $400.00
+                  <Typography display="inline"> </Typography>
+                </span>
+              }
+              features={["3.50 hours Lesson", "90 mins lesson before drive test", ""]}
             />
           </Grid>
         </Grid>
