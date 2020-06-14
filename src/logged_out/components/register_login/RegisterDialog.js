@@ -39,6 +39,35 @@ function RegisterDialog(props) {
   const [hasTermsOfServiceError, setHasTermsOfServiceError] = useState(false);
   //const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const registerTermsCheckbox = useRef();
+  const [testcenters, setTestCenter] = React.useState('');
+
+  const testcenter = [
+    {
+      value: 'None',
+      label: 'None',
+    },
+
+    {
+      value: 'Burwood',
+      label: 'Burwood',
+    },
+    {
+      value: 'Carlton',
+      label: 'Carlton',
+    },
+    {
+      value: 'Dandenong',
+      label: 'Dandenong',
+    },
+    {
+      value: 'Heatherton',
+      label: 'Heatherton',
+    },
+  ];
+
+  const handleChange = (event) => {
+    setTestCenter(event.target.value);
+  };
 
 
   const register = useCallback(() => {
@@ -46,6 +75,8 @@ function RegisterDialog(props) {
       setHasTermsOfServiceError(true);
       return;
     }
+
+
 
     setStatus(null);
     setIsLoading(true);
@@ -221,29 +252,50 @@ function RegisterDialog(props) {
               />
             </Grid>
 
-            {/*DriveTest Center */}
+            {/*DriveTest Center
+
+            <TextField
+              id="outlined-select-currency-native"
+              select
+              label="Native select"
+              value={currency}
+              onChange={handleChange}
+              SelectProps={{
+                native: true,
+              }}
+              helperText="Please select your currency"
+              variant="outlined"
+            >
+              {currencies.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </TextField>
+
+            */}
+
             <Grid item xs={12} >
 
               <TextField
-                variant="outlined"
-                margin="normal"
-                //required
-                fullWidth
-                error={status === "invalidCenter"}
+                id="test-center"
+                select
                 label="Vicroads Test Center"
-                //autoFocus
-                autoComplete="off"
-                type="text"
+                value={testcenters}
+                onChange={handleChange}
+                SelectProps={{
+                native: true,
+              }}
+                helperText="Please select Vicroads Test Center"
+                variant="outlined"
+              >
+                {testcenter.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </TextField>  
 
-
-                onChange={() => {
-                  if (status === "invalidCenter") {
-                    setStatus(null);
-                  }
-                }}
-
-                FormHelperTextProps={{ error: true }}
-              />
             </Grid>
 
             <FormControlLabel
