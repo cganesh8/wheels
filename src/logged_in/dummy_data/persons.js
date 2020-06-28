@@ -1,53 +1,73 @@
-import image1 from "./images/image1.jpg";
-import image2 from "./images/image2.jpg";
-import image3 from "./images/image3.jpg";
-import image4 from "./images/image4.jpg";
-import image5 from "./images/image5.jpg";
-import image6 from "./images/image6.jpg";
-import image7 from "./images/image7.jpg";
-import image8 from "./images/image8.jpg";
-import image9 from "./images/image9.jpg";
-import image10 from "./images/image10.jpg";
+import image1 from "./images/TM2D_Bindu.jpg";
+import image2 from "./images/TM2D_Jason.jpg";
+import image3 from "./images/TM2D_Nata.jpg";
+import image4 from "./images/TM2D_Appa.jpg";
+import image5 from "./images/TM2D_Sarah.jpg";
+import image6 from "./images/TM2D_Rita.jpg";
+import image7 from "./images/TM2D_Halim.jpg";
+import image8 from "./images/TM2D_Sophia.jpg";
+import image9 from "./images/TM2D_Peter.jpg";
+import image10 from "./images/TM2D_Monica.jpg";
+import image11 from "./images/TM2D_Aqa.jpg";
+import image12 from "./images/TM2D_Amos.jpg";
+import image13 from "./images/TM2D_Js.jpg";
+import image14 from "./images/TM2D_John.jpg";
 
 export default [
   {
     profilePicUrl: image1,
-    name: "Markus"
+    name: "Bindu @ Hetherton"
   },
   {
     profilePicUrl: image2,
-    name: "David"
+    name: "Jason @ Burwood"
   },
   {
     profilePicUrl: image3,
-    name: "Arold"
+    name: "Natalia @ Dandenong"
   },
   {
     profilePicUrl: image4,
-    name: "Joanic"
+    name: "Appa @ Carlton"
   },
   {
     profilePicUrl: image5,
-    name: "Sophia"
+    name: "Sarah @ Burwood"
   },
   {
     profilePicUrl: image6,
-    name: "Aaron"
+    name: "Rita @ Bundoora"
   },
   {
     profilePicUrl: image7,
-    name: "Steven"
+    name: "Halim @ Heatherton"
   },
   {
     profilePicUrl: image8,
-    name: "Felix"
+    name: "Sohia @ Burwood"
   },
   {
     profilePicUrl: image9,
-    name: "Vivien"
+    name: "Peter @ Dandenong"
   },
   {
     profilePicUrl: image10,
-    name: "Leonie"
+    name: "Nata @ Dandenong"
+  },
+  {
+    profilePicUrl: image11,
+    name: "Aqa @ Frankston"
+  },
+  {
+    profilePicUrl: image12,
+    name: "Amos @ Mooroolbark"
+  },
+  {
+    profilePicUrl: image13,
+    name: "Js @ Mooroolbark"
+  },
+  {
+    profilePicUrl: image14,
+    name: "John @ Burwood"
   }
 ];

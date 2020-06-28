@@ -1,7 +1,9 @@
 import React, { Fragment } from "react";
-import PropTypes from "prop-types";
+//import PropTypes from "prop-types";
 import Settings1 from "./Settings1";
 import Settings2 from "./Settings2";
+import Settings3 from "./Settings3";
+import Settings4 from "./Settings4";
 
 function SettingsArea(props) {
   const { pushMessageToSnackbar } = props;
@@ -9,12 +11,14 @@ function SettingsArea(props) {
     <Fragment>
       <Settings1 pushMessageToSnackbar={pushMessageToSnackbar} />
       <Settings2 pushMessageToSnackbar={pushMessageToSnackbar} />
+      <Settings3 pushMessageToSnackbar={pushMessageToSnackbar} />
+      <Settings4 pushMessageToSnackbar={pushMessageToSnackbar} />
     </Fragment>
   );
 }
 
-SettingsArea.propTypes = {
-  pushMessageToSnackbar: PropTypes.func
-};
+//SettingsArea.propTypes = {
+//  pushMessageToSnackbar: PropTypes.func
+//};
 
 export default SettingsArea;

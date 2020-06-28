@@ -16,6 +16,7 @@ import HowToRegIcon from "@material-ui/icons/HowToReg";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 //import BookIcon from "@material-ui/icons/Book";
 import NavigationDrawer from "../../../shared/components/NavigationDrawer";
+//import Logo from "../../../logged_out/dummy_data/images/TM2DLogo.svg";
 
 const styles = theme => ({
   appBar: {
@@ -55,11 +56,6 @@ function NavBar(props) {
       name: "Home",
       icon: <HomeIcon className="text-white" />
     },
-    //{
-    //  link: "/blog",
-    //  name: "Blog",
-    //  icon: <BookIcon className="text-white" />
-    //},
     {
       name: "Register",
       onClick: openRegisterDialog,

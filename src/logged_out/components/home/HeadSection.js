@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, memo } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import {
@@ -10,10 +10,14 @@ import {
   Box,
   withStyles,
   withWidth,
-  isWidthUp
+  isWidthUp,
+  IconButton
 } from "@material-ui/core";
-import ldpassImage from "../../dummy_data/images/ldpassImage2.jpg";
+import ldpassImage from "../../dummy_data/images/TM2D_Collage_2x2.jpg";
 import WaveBorder from "../../../shared/components/WaveBorder";
+
+import { Link } from "react-router-dom";
+
 
 const styles = theme => ({
   extraLargeButtonLabel: {
@@ -99,7 +103,29 @@ const styles = theme => ({
 });
 
 function HeadSection(props) {
-  const { classes, theme, width } = props;
+
+  const {
+    classes,
+    theme,
+    width,
+
+    openRegisterDialog,
+    handleMobileDrawerOpen,
+    handleMobileDrawerClose,
+    mobileDrawerOpen,
+    selectedTab,
+
+
+  } = props;
+
+  const menuItems = [
+
+    {
+      name: "Register",
+      onClick: openRegisterDialog,
+    },
+  ];
+
   return (
     <Fragment>
       <div className={classNames("lg-p-top", classes.wrapper)}>
@@ -123,7 +149,7 @@ function HeadSection(props) {
                         <Typography
                           variant={isWidthUp("lg", width) ? "h3" : "h4"}
                         >
-                          We produce safer drivers based on our structured driving lessons
+                          We develop safe and confident drivers based on our structured driving lessons
                         </Typography>
                       </Box>
                       <div>
@@ -132,21 +158,57 @@ function HeadSection(props) {
                             variant={isWidthUp("lg", width) ? "h6" : "body1"}
                             color="textSecondary"
                           >
-                            Since 2002, we having being teaching learner drivers to become
-                            competent drivers and helping oversea's drivers with local driving
-                            needs.
+                            Since 2002, TM2D has guided over 9,000 learner drivers, both local
+                            and from overseas to successfully attain a Victorian driving license.
                           </Typography>
                         </Box>
-                        <Button
-                          variant="contained"
-                          color="secondary"
-                          fullWidth
-                          className={classes.extraLargeButton}
-                          classes={{ label: classes.extraLargeButtonLabel }}
-                          href="https://github.com/dunky11/react-saas-template"
-                        >
-                          Download from GitHub
-                        </Button>
+
+                        <div>
+                          <Hidden mdUp>
+                            <IconButton
+                              className={classes.menuButton}
+                              onClick={handleMobileDrawerOpen}
+                              aria-label="Open Navigation"
+                            >
+                              {/*<MenuIcon color="primary" /> */}
+
+                            </IconButton>
+                          </Hidden>
+                          <Hidden smDown>
+                            {menuItems.map(element => {
+                              if (element.link) {
+                                return (
+                                  <Link
+                                    key={element.name}
+                                    to={element.link}
+                                    className={classes.noDecoration}
+                                    onClick={handleMobileDrawerClose}
+                                  >
+                                    <Button
+                                      color="secondary"
+                                      size="large"
+                                      classes={{ text: classes.menuButtonText }}
+                                    >
+                                      {element.name}
+                                    </Button>
+                                  </Link>
+                                );
+                              }
+                              return (
+                                <Button
+                                  color="secondary"
+                                  size="large"
+                                  onClick={element.onClick}
+                                  classes={{ text: classes.menuButtonText }}
+                                  key={element.name}
+                                >
+                                  {element.name}
+                                </Button>
+                              );
+                            })}
+                          </Hidden>
+                        </div>
+
                       </div>
                     </Box>
                   </Grid>
@@ -171,7 +233,14 @@ function HeadSection(props) {
         lowerColor="#FFFFFF"
         className={classes.waveBorder}
         animationNegativeDelay={2}
+
+        menuItems={menuItems}
+        anchor="right"
+        open={mobileDrawerOpen}
+        selectedItem={selectedTab}
+        onClose={handleMobileDrawerClose}
       />
+
     </Fragment>
   );
 }
@@ -179,9 +248,17 @@ function HeadSection(props) {
 HeadSection.propTypes = {
   classes: PropTypes.object,
   width: PropTypes.string,
-  theme: PropTypes.object
+  theme: PropTypes.object,
+  openRegisterForm: PropTypes.func.isRequired,
+
+  //classes: PropTypes.object.isRequired,
+  handleMobileDrawerOpen: PropTypes.func,
+  handleMobileDrawerClose: PropTypes.func,
+  mobileDrawerOpen: PropTypes.bool,
+  selectedTab: PropTypes.string,
+  //openRegisterDialog: PropTypes.func.isRequired,
+  //openRegisterForm: PropTypes.func.isRequired,
+  openLoginDialog: PropTypes.func.isRequired
 };
 
-export default withWidth()(
-  withStyles(styles, { withTheme: true })(HeadSection)
-);
+export default withWidth()(withStyles(styles, { withTheme: true })(memo(HeadSection)));

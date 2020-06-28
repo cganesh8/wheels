@@ -246,12 +246,12 @@ function Footer(props) {
           </Hidden>
           <Grid item xs={12} md={6} lg={4}>
             <Typography variant="h6" paragraph className="text-white">
-              About Teach Me 2 Drive School
+              About Teach Me 2 Drive
             </Typography>
             <Typography style={{ color: "#8f9296" }} paragraph>
-              We are a Melbourne, Victoria based driving school. We teach
-              learner drivers to become  competent and safer drivers with
-              our comprehensive driving lessons.
+              We are a premier driving school based in Melbourne, operating
+              since 2002. We offer a range of driving lessons for learners
+              of diverse experience.
             </Typography>
             <Box display="flex">
               {socialIcons.map((socialIcon, index) => (

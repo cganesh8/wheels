@@ -1,6 +1,6 @@
 import React, { useState, useRef, useCallback } from "react";
 import PropTypes from "prop-types";
-import format from "date-fns/format";
+//import format from "date-fns/format";
 import { GridListTileBar, withStyles } from "@material-ui/core";
 import VertOptions from "./VertOptions";
 
@@ -26,7 +26,7 @@ function SelfAligningImage(props) {
     classes,
     src,
     title,
-    timeStamp,
+    //timeStamp,
     options,
     roundedBorder,
     theme,
@@ -62,9 +62,7 @@ function SelfAligningImage(props) {
       {title && (
         <GridListTileBar
           title={title}
-          subtitle={format(new Date(timeStamp * 1000), "PP - k:mm", {
-            awareOfUnicodeTokens: true,
-          })}
+
           actionIcon={
             options.length > 0 && (
               <VertOptions color={theme.palette.common.white} items={options} />
@@ -81,7 +79,7 @@ SelfAligningImage.propTypes = {
   src: PropTypes.string.isRequired,
   theme: PropTypes.object.isRequired,
   title: PropTypes.string,
-  timeStamp: PropTypes.number,
+  //timeStamp: PropTypes.number,
   roundedBorder: PropTypes.bool,
   options: PropTypes.arrayOf(PropTypes.object),
 };

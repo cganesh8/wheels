@@ -13,7 +13,7 @@ import {
 import FormDialog from "../../../shared/components/FormDialog";
 import HighlightedInformation from "../../../shared/components/HighlightedInformation";
 import ButtonCircularProgress from "../../../shared/components/ButtonCircularProgress";
-import VisibilityPasswordTextField from "../../../shared/components/VisibilityPasswordTextField";
+//import VisibilityPasswordTextField from "../../../shared/components/VisibilityPasswordTextField";
 
 const styles = (theme) => ({
   forgotPassword: {
@@ -46,21 +46,18 @@ function LoginDialog(props) {
     status,
   } = props;
   const [isLoading, setIsLoading] = useState(false);
-  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-  const loginEmail = useRef();
-  const loginPassword = useRef();
+  //const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  //const loginEmail = useRef();
+  //const loginPassword = useRef();
+  const loginMobilePhone = useRef();
+  //const loginDriveTestDate = useRef();
 
   const login = useCallback(() => {
     setIsLoading(true);
     setStatus(null);
-    if (loginEmail.current.value !== "test@web.com") {
+    if (loginMobilePhone.current.value !== "0412886730") {
       setTimeout(() => {
-        setStatus("invalidEmail");
-        setIsLoading(false);
-      }, 1500);
-    } else if (loginPassword.current.value !== "test") {
-      setTimeout(() => {
-        setStatus("invalidPassword");
+        setStatus("invalidMobilePhone");
         setIsLoading(false);
       }, 1500);
     } else {
@@ -68,7 +65,7 @@ function LoginDialog(props) {
         history.push("/c/dashboard");
       }, 150);
     }
-  }, [setIsLoading, loginEmail, loginPassword, history, setStatus]);
+  }, [setIsLoading, loginMobilePhone, history, setStatus]);
 
   return (
     <Fragment>
@@ -87,70 +84,41 @@ function LoginDialog(props) {
             <TextField
               variant="outlined"
               margin="normal"
-              error={status === "invalidEmail"}
+              error={status === "invalidMobilePhone"}
               required
               fullWidth
-              label="Email Address"
-              inputRef={loginEmail}
+              label="Mobile Phone"
+              inputRef={loginMobilePhone}
               autoFocus
               autoComplete="off"
-              type="email"
+              type="text"
               onChange={() => {
-                if (status === "invalidEmail") {
+                if (status === "invalidMobilePhone") {
                   setStatus(null);
                 }
               }}
               helperText={
-                status === "invalidEmail" &&
-                "This email address isn't associated with an account."
+                status === "invalidMobilePhone" &&
+                "This mobile phone number isn't associated with our Register."
               }
               FormHelperTextProps={{ error: true }}
             />
-            <VisibilityPasswordTextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              error={status === "invalidPassword"}
-              label="Password"
-              inputRef={loginPassword}
-              autoComplete="off"
-              onChange={() => {
-                if (status === "invalidPassword") {
-                  setStatus(null);
-                }
-              }}
-              helperText={
-                status === "invalidPassword" ? (
-                  <span>
-                    Incorrect password. Try again, or click on{" "}
-                    <b>&quot;Forgot Password?&quot;</b> to reset it.
-                  </span>
-                ) : (
-                  ""
-                )
-              }
-              FormHelperTextProps={{ error: true }}
-              onVisibilityChange={setIsPasswordVisible}
-              isVisible={isPasswordVisible}
-            />
+
             <FormControlLabel
               className={classes.formControlLabel}
               control={<Checkbox color="primary" />}
-              label={<Typography variant="body1">Remember me</Typography>}
+            //label={<Typography variant="body1">Remember me</Typography>}
             />
             {status === "verificationEmailSend" ? (
-              <HighlightedInformation>
+              {/*<HighlightedInformation>
                 We have send instructions on how to reset your password to your
                 email address
-              </HighlightedInformation>
+              </HighlightedInformation> */}
             ) : (
-              <HighlightedInformation>
-                Email is: <b>test@web.com</b>
-                <br />
-                Password is: <b>test</b>
-              </HighlightedInformation>
-            )}
+                <HighlightedInformation>
+                  Mobile: <b>0412886730</b>
+                </HighlightedInformation>
+              )}
           </Fragment>
         }
         actions={
@@ -186,7 +154,7 @@ function LoginDialog(props) {
                 }
               }}
             >
-              Forgot Password?
+
             </Typography>
           </Fragment>
         }
