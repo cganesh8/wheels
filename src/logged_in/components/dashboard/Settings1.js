@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 //import ListItemIcon from '@material-ui/core/ListItemIcon';
-import { green, deepPurple } from '@material-ui/core/colors';
+import Filter1Icon from '@material-ui/icons/Filter1';
+import { pink, deepPurple } from '@material-ui/core/colors';
 
 import {
   List,
@@ -66,28 +67,28 @@ function Settings1(props) {
     },
     {
       state: option2,
-      label: "If you have an Overseas driving license, how long since it was first issued?",
+      label: "If you have an Overseas driving license, when was it first issued?",
       label1: "In order to obtain a full Victorian driving license, your Overseas driving license must be valid for more than 3 years",
     },
     {
       state: option3,
       label: "Do you have any pre-existing medical condition e.g. diabetics or HBP that can affect your driving?",
-      label1: "If you have any medical condtion, you need to obtain a medicsl clearance letter from your GP",
+      label1: "If you have any medical conditions, you would need to obtain a medical clearance letter from your GP",
     },
     {
       state: option4,
-      label: "Still living in the same address?",
-      label1: "Please bring along a proof of address letter",
+      label: " Are you still living in the same address?",
+      label1: "If you don't have a Victorian leaner license, you must bring along a proof of address letter or document",
     },
     {
       state: option5,
-      label: "You need to pass an eye chart test",
-      label1: "If you use an visual aid devices eg. spectacles or len, please have them on",
+      label: "You would be required to undertake and pass an eye chart test",
+      label1: "If you use any visual aid devices eg. spectacles or contact lenses, please ensure you have them on.",
     },
     {
       state: option6,
-      label: "if the logbook applies, ensure it is fully completed and consistently signed off",
-      label1: "For those 21 years old & below, verify your log book or digital app with Vicroadds several days before your drive test",
+      label: "If the logbook applies, ensure it is fully completed and consistently signed off",
+      label1: "For those 21 years old & below, verify your log book or digital app with Vicroads several days before your drive test",
     },
   ];
 
@@ -96,7 +97,7 @@ function Settings1(props) {
       <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
 
         <ListItemAvatar>
-          <Avatar style={{ color: green[500] }}>1</Avatar>
+          <Avatar style={{ color: pink[900] }}> <Filter1Icon /> </Avatar>
         </ListItemAvatar>
 
         <Typography>At the Vicroads Office, you will be asked the following:</Typography>

@@ -127,7 +127,7 @@ const socialIcons = [
         role="img"
 
         class="google-plus"
-        fill="#000000"
+        //fill="#000000"
 
         width="24px"
         height="24px"

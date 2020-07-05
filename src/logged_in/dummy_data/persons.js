@@ -44,15 +44,15 @@ export default [
   },
   {
     profilePicUrl: image8,
-    name: "Sohia @ Burwood"
+    name: "Sophia @ Burwood"
   },
   {
     profilePicUrl: image9,
-    name: "Peter @ Dandenong"
+    name: "Chris @ Dandenong"
   },
   {
     profilePicUrl: image10,
-    name: "Nata @ Dandenong"
+    name: "Monica @ Heatherton"
   },
   {
     profilePicUrl: image11,
@@ -64,7 +64,7 @@ export default [
   },
   {
     profilePicUrl: image13,
-    name: "Js @ Mooroolbark"
+    name: "JasonSeni @ Mooroolbark"
   },
   {
     profilePicUrl: image14,

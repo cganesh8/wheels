@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 //import ListItemIcon from '@material-ui/core/ListItemIcon';
-import Filter3Icon from '@material-ui/icons/Filter3';
-import { blue } from '@material-ui/core/colors';
+import { green } from '@material-ui/core/colors';
+import CastForEducationIcon from '@material-ui/icons/CastForEducation';
 
 import {
     List,
@@ -46,47 +46,23 @@ const styles = (theme) => ({
     },
 });
 
-function Settings3(props) {
+function SettingsPass(props) {
     const { classes } = props;
     //const [isSaveLoading, setIsSaveLoading] = useState(false);
     //const [isDefaultLoading, setIsDefaultLoading] = useState(false);
     const [option1] = useState("None");
     const [option2] = useState("None");
-    const [option3] = useState("None");
-    const [option4] = useState("None");
-    const [option5] = useState("None");
-    const [option6] = useState("None");
-    const [option7] = useState("None");
-
 
     const inputs = [
         {
             state: option1,
-            label: "Know the difference between advisory speed and regularity speed signs.",
+            label: "Await the tester to announce the results of the drive test",
+            stateName: "option1",
         },
         {
             state: option2,
-            label: "Throughout your drive test, keep below at least 5km/h from maximum speed",
-        },
-        {
-            state: option3,
-            label: "If your drive test is within school times on school days, school speed limits strictly applies in all school zones",
-        },
-        {
-            state: option4,
-            label: "There are also permanent 40km/h speed zones, drive at about 35km/h in these zones.",
-        },
-        {
-            state: option5,
-            label: "Where there are road works, speed is generally 40km/h if displayed, drive at about 35km/h in these areas. ",
-        },
-        {
-            state: option6,
-            label: "Approach all intersections slowly, DO NOT rush, look several times before turning into the main road",
-        },
-        {
-            state: option7,
-            label: "When turning left or right, maintain an average speed of about 20km/h",
+            label: "If you PASS your drive test, TM2D would  be delighted if we can take your photograph with a PASSED pennant for our records.  This photo will be posted on our website for promotional purposes",
+            stateName: "option2",
         },
     ];
 
@@ -95,10 +71,10 @@ function Settings3(props) {
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
 
                 <ListItemAvatar>
-                    <Avatar style={{ color: blue[900] }}> <Filter3Icon /> </Avatar>
+                    <Avatar style={{ color: green[900] }}> <CastForEducationIcon /> </Avatar>
                 </ListItemAvatar>
 
-                <Typography>Managing Speed – (At all times when driving)</Typography>
+                <Typography>Final Stage</Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails className={classes.dBlock}>
                 <List disablePadding>
@@ -131,10 +107,10 @@ function Settings3(props) {
     );
 }
 
-Settings3.propTypes = {
+SettingsPass.propTypes = {
     classes: PropTypes.object.isRequired,
     theme: PropTypes.object.isRequired,
     pushMessageToSnackbar: PropTypes.func,
 };
 
-export default withWidth()(withStyles(styles, { withTheme: true })(Settings3));
+export default withWidth()(withStyles(styles, { withTheme: true })(SettingsPass));

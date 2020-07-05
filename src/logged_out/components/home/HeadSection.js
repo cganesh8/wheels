@@ -1,22 +1,23 @@
-import React, { Fragment, memo } from "react";
+import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import {
   Grid,
   Typography,
   Card,
-  Button,
   Hidden,
   Box,
   withStyles,
   withWidth,
   isWidthUp,
-  IconButton
+  //IconButton
 } from "@material-ui/core";
-import ldpassImage from "../../dummy_data/images/TM2D_Collage_2x2.jpg";
+//import ldpassImage from "../../dummy_data/images/TM2D_Collage_2x2.jpg";
+//import ldpassImage from "../../dummy_data/images/TM2D_5+PassP.jpg";
+//import ldpassImage from "../../dummy_data/images/TM2D_Paint_1.jpg";
+import ldpassImage from "../../dummy_data/images/TM2D_Stars_1.jpg";
 import WaveBorder from "../../../shared/components/WaveBorder";
 
-import { Link } from "react-router-dom";
 
 
 const styles = theme => ({
@@ -104,27 +105,7 @@ const styles = theme => ({
 
 function HeadSection(props) {
 
-  const {
-    classes,
-    theme,
-    width,
-
-    openRegisterDialog,
-    handleMobileDrawerOpen,
-    handleMobileDrawerClose,
-    mobileDrawerOpen,
-    selectedTab,
-
-
-  } = props;
-
-  const menuItems = [
-
-    {
-      name: "Register",
-      onClick: openRegisterDialog,
-    },
-  ];
+  const { classes, theme, width } = props;
 
   return (
     <Fragment>
@@ -163,51 +144,7 @@ function HeadSection(props) {
                           </Typography>
                         </Box>
 
-                        <div>
-                          <Hidden mdUp>
-                            <IconButton
-                              className={classes.menuButton}
-                              onClick={handleMobileDrawerOpen}
-                              aria-label="Open Navigation"
-                            >
-                              {/*<MenuIcon color="primary" /> */}
 
-                            </IconButton>
-                          </Hidden>
-                          <Hidden smDown>
-                            {menuItems.map(element => {
-                              if (element.link) {
-                                return (
-                                  <Link
-                                    key={element.name}
-                                    to={element.link}
-                                    className={classes.noDecoration}
-                                    onClick={handleMobileDrawerClose}
-                                  >
-                                    <Button
-                                      color="secondary"
-                                      size="large"
-                                      classes={{ text: classes.menuButtonText }}
-                                    >
-                                      {element.name}
-                                    </Button>
-                                  </Link>
-                                );
-                              }
-                              return (
-                                <Button
-                                  color="secondary"
-                                  size="large"
-                                  onClick={element.onClick}
-                                  classes={{ text: classes.menuButtonText }}
-                                  key={element.name}
-                                >
-                                  {element.name}
-                                </Button>
-                              );
-                            })}
-                          </Hidden>
-                        </div>
 
                       </div>
                     </Box>
@@ -234,11 +171,6 @@ function HeadSection(props) {
         className={classes.waveBorder}
         animationNegativeDelay={2}
 
-        menuItems={menuItems}
-        anchor="right"
-        open={mobileDrawerOpen}
-        selectedItem={selectedTab}
-        onClose={handleMobileDrawerClose}
       />
 
     </Fragment>
@@ -249,16 +181,10 @@ HeadSection.propTypes = {
   classes: PropTypes.object,
   width: PropTypes.string,
   theme: PropTypes.object,
-  openRegisterForm: PropTypes.func.isRequired,
 
-  //classes: PropTypes.object.isRequired,
-  handleMobileDrawerOpen: PropTypes.func,
-  handleMobileDrawerClose: PropTypes.func,
-  mobileDrawerOpen: PropTypes.bool,
-  selectedTab: PropTypes.string,
-  //openRegisterDialog: PropTypes.func.isRequired,
-  //openRegisterForm: PropTypes.func.isRequired,
-  openLoginDialog: PropTypes.func.isRequired
 };
 
-export default withWidth()(withStyles(styles, { withTheme: true })(memo(HeadSection)));
+export default withWidth()(
+  withStyles(styles, { withTheme: true })(HeadSection)
+
+);

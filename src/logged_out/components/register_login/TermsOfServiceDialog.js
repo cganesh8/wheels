@@ -33,148 +33,77 @@ function TermsOfServiceDialog(props) {
     <Dialog open scroll="paper" onClose={onClose} hideBackdrop>
       <DialogTitle>Terms and Conditions</DialogTitle>
       <DialogContent>
-        <Typography variant="h6" color="primary" paragraph>
-          Introduction
-        </Typography>
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-          ipsum dolor sit amet.
-        </Typography>
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-          rebum. Stet clita kasd gubergren.
+        <Typography variant="h6" color="secondary" paragraph>
+          Teach Me 2 Drive or Teach Me 2 Drive Pty Ltd (TM2D) with
+          ABN : 123456789 will endeavour to engage an instructor
+          according to your requirements for the drive lesson or
+          the drive test.
         </Typography>
         <Typography variant="h6" color="primary" paragraph>
-          Intellectual Property Rights
+          Independent Instructors
         </Typography>
         <Typography paragraph>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-        </Typography>
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-          rebum. Stet clita kasd gubergren,
+          Hence TM2D will forward your personal data that you registered
+          in TM2D website to TM2D pool of independent instructors who
+          have their own ABN. The independent instructors operate their
+          own drive school. As such, upon forwarding the information to
+          the independent instructors, TM2D will discharge all its
+          responsibilities as a drive school and the independent instructor
+          will be responsible as to how he or she conducts the drive
+          session with you.
         </Typography>
         <Typography variant="h6" color="primary" paragraph>
-          Restrictions
+          Fee Payment
         </Typography>
         <Typography paragraph>
-          You are specifically restricted from all of the following:
-        </Typography>
-        <Typography className={classes.termsConditionsListitem}>
-          - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-        </Typography>
-        <Typography className={classes.termsConditionsListitem}>
-          - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-        </Typography>
-        <Typography className={classes.termsConditionsListitem}>
-          - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-        </Typography>
-        <Typography className={classes.termsConditionsListitem}>
-          - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-        </Typography>
-        <Typography className={classes.termsConditionsListitem}>
-          - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua.
-        </Typography>
-        <Typography className={classes.termsConditionsListitem}>
-          - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-        </Typography>
-        <Typography className={classes.termsConditionsListitem}>
-          - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-        </Typography>
-        <Typography className={classes.termsConditionsListitem} paragraph>
-          - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-          rebum. Stet clita kasd gubergren,
-        </Typography>
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+          You pay all monies directly to the independent instructor  however
+          for convenience occasionaly TM2D might collect monies from
+          you and  pay the full amount to the allocated instructor. TM2D
+          collects a referral fee from the allocated instructor upon successful
+          completion of  your session.
         </Typography>
         <Typography variant="h6" color="primary" paragraph>
-          Your Content
+          Refund Policy
         </Typography>
         <Typography paragraph>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-        </Typography>
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+          All our prices remain as published in the TM2D website.
+          Suppose you purchased a 5 x 1-hour package at a discounted price
+          and decided to terminate before completion of the package,
+          completed session will be calculated based on TM2D Standard Hourly
+          Rate and the balance refunded within 7 working days.
+
+          There will be no refund on lessons bundled or packaged with a drive test.
+          The instructor nor TM2D cannot be held responsible for any of the
+
+          following issues when appearing for a drive test AND no refund will be given:
+          •	incorrect date & incorrect time bookings
+          •	VicRoads booking issues or system errors
+          •	invalid or not verified or expired driving licenses and related
+          expired test results.
+          •	lack of documents e.g. passport, proof of address, Medicare card,
+          bank cards or logbooks
+          •	incomplete or incorrect logbook entries
+
         </Typography>
         <Typography variant="h6" color="primary" paragraph>
-          No warranties
+          Cancellation
         </Typography>
         <Typography paragraph>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua.
+          The independent instructor requires 24 hours notice for any lesson
+          cancellation and 48 hours notice for drive test cancellation, so
+          that he or she can arrange a replacement session, otherwise the
+          full fee applies.
+
+          By commencing the first session with the instructor we consider
+          that you agree to these terms and conditions.
         </Typography>
         <Typography variant="h6" color="primary" paragraph>
-          Limitation of liability
+          Marketing & Promotion
         </Typography>
         <Typography paragraph>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-        </Typography>
-        <Typography variant="h6" color="primary" paragraph>
-          Indemnification
-        </Typography>
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-        </Typography>
-        <Typography variant="h6" color="primary" paragraph>
-          Severability
-        </Typography>
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua.
-        </Typography>
-        <Typography variant="h6" color="primary" paragraph>
-          Variation of Terms
-        </Typography>
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-        </Typography>
-        <Typography variant="h6" color="primary" paragraph>
-          Assignment
-        </Typography>
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-        </Typography>
-        <Typography variant="h6" color="primary" paragraph>
-          Entire Agreement
-        </Typography>
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-        </Typography>
-        <Typography variant="h6" color="primary" paragraph>
-          Governing Law & Jurisdiction
-        </Typography>
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+          Upon successful completion of a drive test, the independent instructor
+          will take photo of you for marketing and promotional purposes. You can
+          refuse not to have a photo taken.
         </Typography>
       </DialogContent>
       <DialogActions className={classes.dialogActions}>

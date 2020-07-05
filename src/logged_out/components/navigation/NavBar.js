@@ -1,4 +1,5 @@
 import React, { memo } from "react";
+//HOME PAGE NAVBAR
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import {
@@ -16,7 +17,7 @@ import HowToRegIcon from "@material-ui/icons/HowToReg";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 //import BookIcon from "@material-ui/icons/Book";
 import NavigationDrawer from "../../../shared/components/NavigationDrawer";
-//import Logo from "../../../logged_out/dummy_data/images/TM2DLogo.svg";
+import Logo from "../../../logged_out/dummy_data/images/TM2D.jpg";
 
 const styles = theme => ({
   appBar: {
@@ -68,27 +69,27 @@ function NavBar(props) {
     }
   ];
   return (
+    //HOME PAGE NAVBAR
     <div className={classes.root}>
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
+
           <div>
-            <Typography
-              variant="h4"
-              className={classes.brandText}
-              display="inline"
-              color="primary"
-            >
-              TM
-            </Typography>
+            <img src={Logo} alt="Logo" />
+          </div>
+
+          <div>
             <Typography
               variant="h4"
               className={classes.brandText}
               display="inline"
               color="secondary"
             >
-              2D
+              TEACH ME 2 DRIVE
             </Typography>
+
           </div>
+
           <div>
             <Hidden mdUp>
               <IconButton

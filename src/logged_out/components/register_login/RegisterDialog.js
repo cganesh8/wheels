@@ -46,7 +46,14 @@ function RegisterDialog(props) {
       value: 'None',
       label: 'None',
     },
-
+    {
+      value: 'Broadmeadows',
+      label: 'Broadmeadows',
+    },
+    {
+      value: 'Bundoora',
+      label: 'Bundoora',
+    },
     {
       value: 'Burwood',
       label: 'Burwood',
@@ -62,6 +69,18 @@ function RegisterDialog(props) {
     {
       value: 'Heatherton',
       label: 'Heatherton',
+    },
+    {
+      value: 'Mooroolbark',
+      label: 'Mooroolbark',
+    },
+    {
+      value: 'Pakenham',
+      label: 'Pakenham',
+    },
+    {
+      value: 'Werribee',
+      label: 'Werribee',
     },
   ];
 
@@ -284,17 +303,17 @@ function RegisterDialog(props) {
                 value={testcenters}
                 onChange={handleChange}
                 SelectProps={{
-                native: true,
-              }}
+                  native: true,
+                }}
                 helperText="Please select Vicroads Test Center"
                 variant="outlined"
               >
                 {testcenter.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </TextField>  
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </TextField>
 
             </Grid>
 

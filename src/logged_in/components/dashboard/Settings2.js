@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 //import ListItemIcon from '@material-ui/core/ListItemIcon';
-import { red } from '@material-ui/core/colors';
+import Filter2Icon from '@material-ui/icons/Filter2';
+import { red, deepPurple } from '@material-ui/core/colors';
 
 import {
     List,
@@ -49,48 +50,17 @@ function Settings2(props) {
     const { classes } = props;
 
     const [option1] = useState("None");
-    const [option2] = useState("None");
-    const [option3] = useState("None");
-    const [option4] = useState("None");
-    const [option5] = useState("None");
-    const [option6] = useState("None");
-    const [option7] = useState("None");
 
     const inputs = [
         {
             state: option1,
-            label: "Before the tester arrives, plug in your seat belt and keep the car on accessory mode",
-
-        },
-        {
-            state: option2,
-            label: "Indicate left then right, turn on the low beam then high beam and then the hazard lights ",
-
-        },
-        {
-            state: option3,
-            label: "Apply the brake so that all the rear red lights are working",
-
-        },
-        {
-            state: option4,
-            label: "Demonstrate the use of wipers and washers",
-
-        },
-        {
-            state: option5,
-            label: "Show where the front and rear demisters are including the hand brake",
-
-        },
-        {
-            state: option6,
-            label: "When everyone is safely seated, make sure you start the car before engaging gear or releasing the hand brake",
-
-        },
-        {
-            state: option7,
-            label: "Engage to the appropriate gear, release the handbrake and drive at the speed allowed in the car park",
-
+            label: "Before the tester arrives, be seated in the car with your seatbelts fastened and keep the car on accessory mode",
+            label1: "•  Select the turn signal stalk to Indicate left then right, turn on the lights with low beam, then high beam followed by  the hazard lights",
+            label2: "•  Apply the brake to indicate all the rear red lights are working",
+            label3: "•  Demonstrate the use of wipers and washers",
+            label4: "•  Show where the front and rear demisters are located including the hand brake",
+            label5: "•  When everyone is safely seated, make sure you start the car before engaging gear or releasing the hand brake",
+            label6: "•  Engage the appropriate gear, release the handbrake and drive at the speed allowed in the car park",
         },
     ];
 
@@ -99,7 +69,7 @@ function Settings2(props) {
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
 
                 <ListItemAvatar>
-                    <Avatar style={{ color: red[900] }}>2</Avatar>
+                    <Avatar style={{ color: red[900] }}> <Filter2Icon /> </Avatar>
                 </ListItemAvatar>
 
                 <Typography>Pre-Drive Check at the Vicroads Car Park</Typography>
@@ -115,7 +85,14 @@ function Settings2(props) {
                                 key={index}
                             >
                                 <ListItemText>
-                                    <Typography variant="body2" >{element.label}</Typography>
+                                    <Typography variant="body1" >{element.label}</Typography>
+
+                                    <Typography style={{ color: deepPurple[900] }} variant="body2" >{element.label1}</Typography>
+                                    <Typography style={{ color: deepPurple[900] }} variant="body2" >{element.label2}</Typography>
+                                    <Typography style={{ color: deepPurple[900] }} variant="body2" >{element.label3}</Typography>
+                                    <Typography style={{ color: deepPurple[900] }} variant="body2" >{element.label4}</Typography>
+                                    <Typography style={{ color: deepPurple[900] }} variant="body2" >{element.label5}</Typography>
+                                    <Typography style={{ color: deepPurple[900] }} variant="body2" >{element.label6}</Typography>
                                 </ListItemText>
                                 <FormControl variant="outlined">
                                     <ListItemSecondaryAction
