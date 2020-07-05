@@ -35,7 +35,7 @@ function TermsOfServiceDialog(props) {
       <DialogContent>
         <Typography variant="h6" color="secondary" paragraph>
           Teach Me 2 Drive or Teach Me 2 Drive Pty Ltd (TM2D) with
-          ABN : 123456789 will endeavour to engage an instructor
+          ABN : 46100066966 will endeavour to engage an instructor
           according to your requirements for the drive lesson or
           the drive test.
         </Typography>
@@ -57,7 +57,7 @@ function TermsOfServiceDialog(props) {
         </Typography>
         <Typography paragraph>
           You pay all monies directly to the independent instructor  however
-          for convenience occasionaly TM2D might collect monies from
+          for convenience, occasionaly TM2D might collect monies from
           you and  pay the full amount to the allocated instructor. TM2D
           collects a referral fee from the allocated instructor upon successful
           completion of  your session.

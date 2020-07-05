@@ -231,7 +231,7 @@ function Main(props) {
 
   const selectDashboard = useCallback(() => {
     smoothScrollTop();
-    document.title = "WaVer - Dashboard";
+    document.title = "TM2D - Dashboard";
     setSelectedTab("Dashboard");
     if (!hasFetchedCardChart) {
       setHasFetchedCardChart(true);
@@ -248,7 +248,7 @@ function Main(props) {
 
   const selectPosts = useCallback(() => {
     smoothScrollTop();
-    document.title = "WaVer - Posts";
+    document.title = "TM2D - Posts";
     setSelectedTab("Posts");
     if (!hasFetchedEmojiTextArea) {
       setHasFetchedEmojiTextArea(true);
@@ -292,7 +292,7 @@ function Main(props) {
 
   const selectSubscription = useCallback(() => {
     smoothScrollTop();
-    document.title = "WaVer - Subscription";
+    document.title = "TM2D - Subscription";
     setSelectedTab("Subscription");
   }, [setSelectedTab]);
 

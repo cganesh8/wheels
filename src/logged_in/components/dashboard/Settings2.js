@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 //import ListItemIcon from '@material-ui/core/ListItemIcon';
 import Filter2Icon from '@material-ui/icons/Filter2';
-import { red, deepPurple } from '@material-ui/core/colors';
+import { pink, deepPurple } from '@material-ui/core/colors';
 
 import {
     List,
@@ -69,10 +69,10 @@ function Settings2(props) {
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
 
                 <ListItemAvatar>
-                    <Avatar style={{ color: red[900] }}> <Filter2Icon /> </Avatar>
+                    <Avatar style={{ color: pink[900] }}> <Filter2Icon /> </Avatar>
                 </ListItemAvatar>
 
-                <Typography>Pre-Drive Check at the Vicroads Car Park</Typography>
+                <Typography>At the Vicroads Car Park - Pre-Drive Check</Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails className={classes.dBlock}>
                 <List disablePadding>

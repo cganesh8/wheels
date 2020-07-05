@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 //import ListItemIcon from '@material-ui/core/ListItemIcon';
 import Filter4Icon from '@material-ui/icons/Filter4';
-import { deepOrange } from '@material-ui/core/colors';
+import { pink } from '@material-ui/core/colors';
 
 import {
     List,
@@ -135,7 +135,7 @@ function Settings4(props) {
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
 
                 <ListItemAvatar>
-                    <Avatar style={{ color: deepOrange[900] }}> <Filter4Icon /></Avatar>
+                    <Avatar style={{ color: pink[900] }}> <Filter4Icon /></Avatar>
                 </ListItemAvatar>
 
                 <Typography>Stage 1 - 10 mins</Typography>

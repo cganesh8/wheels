@@ -12,6 +12,8 @@ import image11 from "./images/TM2D_Aqa.jpg";
 import image12 from "./images/TM2D_Amos.jpg";
 import image13 from "./images/TM2D_Js.jpg";
 import image14 from "./images/TM2D_John.jpg";
+import image15 from "./images/TM2D_Serena.jpg";
+import image16 from "./images/TM2D_Sid.jpg";
 
 export default [
   {
@@ -69,5 +71,13 @@ export default [
   {
     profilePicUrl: image14,
     name: "John @ Burwood"
+  },
+  {
+    profilePicUrl: image15,
+    name: "Serena @ Dandenong"
+  },
+  {
+    profilePicUrl: image16,
+    name: "Sid @ Heatherton"
   }
 ];

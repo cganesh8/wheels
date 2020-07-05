@@ -6,6 +6,7 @@ import SettingsArea from "./SettingsArea";
 //import AccountInformationArea from "./AccountInformationArea";
 //import StatisticsArea from "./StatisticsArea";
 
+
 function Dashboard(props) {
   const {
     selectDashboard,
@@ -33,9 +34,11 @@ function Dashboard(props) {
         toggleAccountActivation={toggleAccountActivation}
        >*/}
       <Box mt={4}>
-        <Typography variant="subtitle1" gutterBottom>
+
+        <Typography variant="h6" gutterBottom>
           Drive Test Tips
         </Typography>
+
       </Box>
       <SettingsArea pushMessageToSnackbar={pushMessageToSnackbar} />
       {/*<UserDataArea

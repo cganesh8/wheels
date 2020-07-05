@@ -100,7 +100,7 @@ function Settings1(props) {
           <Avatar style={{ color: pink[900] }}> <Filter1Icon /> </Avatar>
         </ListItemAvatar>
 
-        <Typography>At the Vicroads Office, you will be asked the following:</Typography>
+        <Typography>At the Vicroads Office - FAQ:</Typography>
       </ExpansionPanelSummary>
       <ExpansionPanelDetails className={classes.dBlock}>
         <List disablePadding>

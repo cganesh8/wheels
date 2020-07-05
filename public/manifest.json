@@ -1,10 +1,6 @@
 {
   "short_name": "TM2D",
-<<<<<<< HEAD
-  "name": "TeachMe2Drive",
-=======
   "name": "Teach Me 2 Drive",
->>>>>>> 674698acb03671e525c062c042002dbff50ec88a
   "icons": [
     {
       "src": "favicon.ico",
