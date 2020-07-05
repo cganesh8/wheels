@@ -192,7 +192,11 @@ function NavBar(props) {
     <Fragment>
       <AppBar position="sticky" className={classes.appBar}>
         <Toolbar className={classes.appBarToolbar}>
+        <div>
+              Test
+            </div>
           <Box display="flex" alignItems="center">
+          
             <Hidden smUp>
               <Box mr={1}>
                 <IconButton
@@ -205,6 +209,7 @@ function NavBar(props) {
               </Box>
             </Hidden>
             <Hidden xsDown>
+
               <Typography
                 variant="h4"
                 className={classes.brandText}
