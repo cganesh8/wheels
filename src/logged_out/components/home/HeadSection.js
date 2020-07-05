@@ -5,15 +5,20 @@ import {
   Grid,
   Typography,
   Card,
-  Button,
   Hidden,
   Box,
   withStyles,
   withWidth,
-  isWidthUp
+  isWidthUp,
+  //IconButton
 } from "@material-ui/core";
-import ldpassImage from "../../dummy_data/images/ldpassImage2.jpg";
+//import ldpassImage from "../../dummy_data/images/TM2D_Collage_2x2.jpg";
+//import ldpassImage from "../../dummy_data/images/TM2D_5+PassP.jpg";
+//import ldpassImage from "../../dummy_data/images/TM2D_Paint_1.jpg";
+import ldpassImage from "../../dummy_data/images/TM2D_Stars_1.jpg";
 import WaveBorder from "../../../shared/components/WaveBorder";
+
+
 
 const styles = theme => ({
   extraLargeButtonLabel: {
@@ -99,7 +104,9 @@ const styles = theme => ({
 });
 
 function HeadSection(props) {
+
   const { classes, theme, width } = props;
+
   return (
     <Fragment>
       <div className={classNames("lg-p-top", classes.wrapper)}>
@@ -123,7 +130,7 @@ function HeadSection(props) {
                         <Typography
                           variant={isWidthUp("lg", width) ? "h3" : "h4"}
                         >
-                          We produce safer drivers based on our structured driving lessons
+                          We develop safe and confident drivers based on our structured driving lessons
                         </Typography>
                       </Box>
                       <div>
@@ -132,21 +139,13 @@ function HeadSection(props) {
                             variant={isWidthUp("lg", width) ? "h6" : "body1"}
                             color="textSecondary"
                           >
-                            Since 2002, we having being teaching learner drivers to become
-                            competent drivers and helping oversea's drivers with local driving
-                            needs.
+                            Since 2002, TM2D has guided over 9,000 learner drivers, both local
+                            and from overseas to successfully attain a Victorian driving license.
                           </Typography>
                         </Box>
-                        <Button
-                          variant="contained"
-                          color="secondary"
-                          fullWidth
-                          className={classes.extraLargeButton}
-                          classes={{ label: classes.extraLargeButtonLabel }}
-                          href="https://github.com/dunky11/react-saas-template"
-                        >
-                          Download from GitHub
-                        </Button>
+
+
+
                       </div>
                     </Box>
                   </Grid>
@@ -171,7 +170,9 @@ function HeadSection(props) {
         lowerColor="#FFFFFF"
         className={classes.waveBorder}
         animationNegativeDelay={2}
+
       />
+
     </Fragment>
   );
 }
@@ -179,9 +180,11 @@ function HeadSection(props) {
 HeadSection.propTypes = {
   classes: PropTypes.object,
   width: PropTypes.string,
-  theme: PropTypes.object
+  theme: PropTypes.object,
+
 };
 
 export default withWidth()(
   withStyles(styles, { withTheme: true })(HeadSection)
+
 );

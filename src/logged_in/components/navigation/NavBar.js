@@ -6,7 +6,6 @@ import {
   AppBar,
   Toolbar,
   Typography,
-  Avatar,
   Drawer,
   List,
   IconButton,
@@ -22,15 +21,15 @@ import {
 } from "@material-ui/core";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import ImageIcon from "@material-ui/icons/Image";
-import AccountBalanceIcon from "@material-ui/icons/AccountBalance";
+//import AccountBalanceIcon from "@material-ui/icons/AccountBalance";
 import PowerSettingsNewIcon from "@material-ui/icons/PowerSettingsNew";
 import MenuIcon from "@material-ui/icons/Menu";
-import SupervisorAccountIcon from "@material-ui/icons/SupervisorAccount";
-import MessagePopperButton from "./MessagePopperButton";
-import SideDrawer from "./SideDrawer";
-import Balance from "./Balance";
+//import SupervisorAccountIcon from "@material-ui/icons/SupervisorAccount";
+//import MessagePopperButton from "./MessagePopperButton";
+//import SideDrawer from "./SideDrawer";
+//import Balance from "./Balance";
 import NavigationDrawer from "../../../shared/components/NavigationDrawer";
-import profilePicture from "../../dummy_data/images/profilePicture.jpg";
+import Logo from "../../dummy_data/images/TM2D.jpg";
 
 const styles = theme => ({
   appBar: {
@@ -128,11 +127,11 @@ const styles = theme => ({
 });
 
 function NavBar(props) {
-  const { selectedTab, messages, classes, width, openAddBalanceDialog } = props;
+  const { selectedTab, classes, width } = props;
   // Will be use to make website more accessible by screen readers
   const links = useRef([]);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const [isSideDrawerOpen, setIsSideDrawerOpen] = useState(false);
+  //const [setIsSideDrawerOpen] = useState(false);
 
   const openMobileDrawer = useCallback(() => {
     setIsMobileOpen(true);
@@ -142,18 +141,12 @@ function NavBar(props) {
     setIsMobileOpen(false);
   }, [setIsMobileOpen]);
 
-  const openDrawer = useCallback(() => {
-    setIsSideDrawerOpen(true);
-  }, [setIsSideDrawerOpen]);
 
-  const closeDrawer = useCallback(() => {
-    setIsSideDrawerOpen(false);
-  }, [setIsSideDrawerOpen]);
 
   const menuItems = [
     {
       link: "/c/dashboard",
-      name: "Dashboard",
+      name: "Drive Test Tips",
       onClick: closeMobileDrawer,
       icon: {
         desktop: (
@@ -169,7 +162,7 @@ function NavBar(props) {
     },
     {
       link: "/c/posts",
-      name: "Posts",
+      name: "Successful Learners",
       onClick: closeMobileDrawer,
       icon: {
         desktop: (
@@ -183,24 +176,7 @@ function NavBar(props) {
         mobile: <ImageIcon className="text-white" />
       }
     },
-    {
-      link: "/c/subscription",
-      name: "Subscription",
-      onClick: closeMobileDrawer,
-      icon: {
-        desktop: (
-          <AccountBalanceIcon
-            className={
-              selectedTab === "Subscription"
-                ? classes.textPrimary
-                : "text-white"
-            }
-            fontSize="small"
-          />
-        ),
-        mobile: <AccountBalanceIcon className="text-white" />
-      }
-    },
+
     {
       link: "/",
       name: "Logout",
@@ -216,7 +192,14 @@ function NavBar(props) {
     <Fragment>
       <AppBar position="sticky" className={classes.appBar}>
         <Toolbar className={classes.appBarToolbar}>
+
+          <div>
+            <img src={Logo} alt="Logo" />
+          </div>
+
+
           <Box display="flex" alignItems="center">
+
             <Hidden smUp>
               <Box mr={1}>
                 <IconButton
@@ -228,24 +211,6 @@ function NavBar(props) {
                 </IconButton>
               </Box>
             </Hidden>
-            <Hidden xsDown>
-              <Typography
-                variant="h4"
-                className={classes.brandText}
-                display="inline"
-                color="primary"
-              >
-                Wa
-              </Typography>
-              <Typography
-                variant="h4"
-                className={classes.brandText}
-                display="inline"
-                color="secondary"
-              >
-                Ver
-              </Typography>
-            </Hidden>
           </Box>
           <Box
             display="flex"
@@ -253,42 +218,30 @@ function NavBar(props) {
             alignItems="center"
             width="100%"
           >
-            {isWidthUp("sm", width) && (
-              <Box mr={3}>
-                <Balance
-                  balance={2573}
-                  openAddBalanceDialog={openAddBalanceDialog}
-                />
-              </Box>
-            )}
-            <MessagePopperButton messages={messages} />
+
+            {/*<MessagePopperButton messages={messages} /> */}
             <ListItem
               disableGutters
               className={classNames(classes.iconListItem, classes.smBordered)}
             >
-              <Avatar
-                alt="profile picture"
-                src={profilePicture}
-                className={classNames(classes.accountAvatar)}
-              />
+
               {isWidthUp("sm", width) && (
                 <ListItemText
                   className={classes.username}
-                  primary={
-                    <Typography color="textPrimary">Username</Typography>
-                  }
+
                 />
               )}
             </ListItem>
           </Box>
           <IconButton
-            onClick={openDrawer}
+
             color="primary"
             aria-label="Open Sidedrawer"
           >
-            <SupervisorAccountIcon />
+            <Typography color="textPrimary">Username</Typography>
+
           </IconButton>
-          <SideDrawer open={isSideDrawerOpen} onClose={closeDrawer} />
+          {/*<SideDrawer open={isSideDrawerOpen} onClose={closeDrawer} /> */}
         </Toolbar>
       </AppBar>
       <Hidden xsDown>

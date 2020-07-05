@@ -2,47 +2,47 @@ import React, { Fragment, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Typography, Box } from "@material-ui/core";
 import SettingsArea from "./SettingsArea";
-import UserDataArea from "./UserDataArea";
-import AccountInformationArea from "./AccountInformationArea";
-import StatisticsArea from "./StatisticsArea";
+//import UserDataArea from "./UserDataArea";
+//import AccountInformationArea from "./AccountInformationArea";
+//import StatisticsArea from "./StatisticsArea";
 
 function Dashboard(props) {
   const {
     selectDashboard,
-    CardChart,
-    statistics,
-    toggleAccountActivation,
+    //CardChart,
+    //statistics,
+    //toggleAccountActivation,
     pushMessageToSnackbar,
-    targets,
-    setTargets,
-    isAccountActivated,
+    //targets,
+    //setTargets,
+    //isAccountActivated,
   } = props;
 
   useEffect(selectDashboard, [selectDashboard]);
 
   return (
     <Fragment>
-      <StatisticsArea CardChart={CardChart} data={statistics} />
+      {/*<StatisticsArea CardChart={CardChart} data={statistics} />
       <Box mt={4}>
-        <Typography variant="subtitle1" gutterBottom>
+       <Typography variant="subtitle1" gutterBottom>
           Your Account
         </Typography>
-      </Box>
+      </Box> 
       <AccountInformationArea
         isAccountActivated={isAccountActivated}
         toggleAccountActivation={toggleAccountActivation}
-      />
+       >*/}
       <Box mt={4}>
         <Typography variant="subtitle1" gutterBottom>
-          Settings
+          Drive Test Tips
         </Typography>
       </Box>
       <SettingsArea pushMessageToSnackbar={pushMessageToSnackbar} />
-      <UserDataArea
+      {/*<UserDataArea
         pushMessageToSnackbar={pushMessageToSnackbar}
         targets={targets}
         setTargets={setTargets}
-      />
+      /> */}
     </Fragment>
   );
 }

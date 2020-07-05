@@ -6,15 +6,15 @@ import {
   Divider,
   Toolbar,
   Typography,
-  Button,
+  //Button,
   Paper,
   Box,
   withStyles,
 } from "@material-ui/core";
-import DeleteIcon from "@material-ui/icons/Delete";
+//import DeleteIcon from "@material-ui/icons/Delete";
 import SelfAligningImage from "../../../shared/components/SelfAligningImage";
 import HighlightedInformation from "../../../shared/components/HighlightedInformation";
-import ConfirmationDialog from "../../../shared/components/ConfirmationDialog";
+//import ConfirmationDialog from "../../../shared/components/ConfirmationDialog";
 
 const styles = {
   dBlock: { display: "block" },
@@ -24,53 +24,23 @@ const styles = {
   },
 };
 
-const rowsPerPage = 25;
+const rowsPerPage = 12;
 
 function PostContent(props) {
   const {
-    pushMessageToSnackbar,
-    setPosts,
     posts,
-    openAddPostModal,
+    //openAddPostModal,
     classes,
   } = props;
   const [page, setPage] = useState(0);
-  const [isDeletePostDialogOpen, setIsDeletePostDialogOpen] = useState(false);
-  const [isDeletePostDialogLoading, setIsDeletePostDialogLoading] = useState(
-    false
-  );
 
-  const closeDeletePostDialog = useCallback(() => {
-    setIsDeletePostDialogOpen(false);
-    setIsDeletePostDialogLoading(false);
-  }, [setIsDeletePostDialogOpen, setIsDeletePostDialogLoading]);
 
-  const deletePost = useCallback(() => {
-    setIsDeletePostDialogLoading(true);
-    setTimeout(() => {
-      const _posts = [...posts];
-      const index = _posts.find((element) => element.id === deletePost.id);
-      _posts.splice(index, 1);
-      setPosts(_posts);
-      pushMessageToSnackbar({
-        text: "Your post has been deleted",
-      });
-      closeDeletePostDialog();
-    }, 1500);
-  }, [
-    posts,
-    setPosts,
-    setIsDeletePostDialogLoading,
-    pushMessageToSnackbar,
-    closeDeletePostDialog,
-  ]);
-
-  const onDelete = useCallback(
-    (post) => {
-      setIsDeletePostDialogOpen(true);
-    },
-    [setIsDeletePostDialogOpen]
-  );
+  //const onDelete = useCallback(
+  //  (post) => {
+  //    setIsDeletePostDialogOpen(true);
+  //  },
+  //  [setIsDeletePostDialogOpen]
+  //);
 
   const handleChangePage = useCallback(
     (__, page) => {
@@ -91,15 +61,15 @@ function PostContent(props) {
                   <SelfAligningImage
                     src={element.src}
                     title={element.name}
-                    timeStamp={element.timestamp}
+
                     options={[
-                      {
-                        name: "Delete",
-                        onClick: () => {
-                          onDelete(element);
-                        },
-                        icon: <DeleteIcon />,
-                      },
+                      // {
+                      //   name: "Delete",
+                      //  onClick: () => {
+                      //    onDelete(element);
+                      //   },
+                      //   icon: <DeleteIcon />,
+                      // },
                     ]}
                   />
                 </Grid>
@@ -115,20 +85,21 @@ function PostContent(props) {
         </HighlightedInformation>
       </Box>
     );
-  }, [posts, onDelete, page]);
+  }, [posts, page]);
 
   return (
     <Paper>
       <Toolbar className={classes.toolbar}>
-        <Typography variant="h6">Your Posts</Typography>
-        <Button
+        <Typography variant="h6">Successful Learners</Typography>
+
+        {/*<Button
           variant="contained"
           color="secondary"
           onClick={openAddPostModal}
           disableElevation
         >
           Add Post
-        </Button>
+        </Button> */}
       </Toolbar>
       <Divider />
       {printImageGrid()}
@@ -152,20 +123,20 @@ function PostContent(props) {
         }}
         labelRowsPerPage=""
       />
-      <ConfirmationDialog
+      {/*<ConfirmationDialog
         open={isDeletePostDialogOpen}
         title="Confirmation"
         content="Do you really want to delete the post?"
         onClose={closeDeletePostDialog}
         loading={isDeletePostDialogLoading}
         onConfirm={deletePost}
-      />
+      /> */}
     </Paper>
   );
 }
 
 PostContent.propTypes = {
-  openAddPostModal: PropTypes.func.isRequired,
+  //openAddPostModal: PropTypes.func.isRequired,
   classes: PropTypes.object.isRequired,
   posts: PropTypes.arrayOf(PropTypes.object).isRequired,
   setPosts: PropTypes.func.isRequired,

@@ -1,214 +1,177 @@
-import React from "react";
-import PropTypes from "prop-types";
-import classNames from "classnames";
-import {
-  Grid,
-  Typography,
-  isWidthUp,
-  withWidth,
-  withStyles
-} from "@material-ui/core";
-import PriceCard from "./PriceCard";
-import calculateSpacing from "./calculateSpacing";
+import React from 'react';
+//import AppBar from '@material-ui/core/AppBar';
+import Button from '@material-ui/core/Button';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardHeader from '@material-ui/core/CardHeader';
+//import CssBaseline from '@material-ui/core/CssBaseline';
+import Grid from '@material-ui/core/Grid';
+//import StarIcon from '@material-ui/icons/StarBorder';
+//import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+//import Link from '@material-ui/core/Link';
+import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
+//import Box from '@material-ui/core/Box';
+import Car1Icon from '@material-ui/icons/DirectionsCar';
+//import Car2Icon from '@material-ui/icons/LocalCarWash';
+import Car2Icon from '@material-ui/icons/AssignmentTurnedIn';
 
-const styles = theme => ({
-  containerFix: {
-    [theme.breakpoints.down("md")]: {
-      paddingLeft: theme.spacing(6),
-      paddingRight: theme.spacing(6)
-    },
-    [theme.breakpoints.down("sm")]: {
-      paddingLeft: theme.spacing(4),
-      paddingRight: theme.spacing(4)
-    },
-    [theme.breakpoints.down("xs")]: {
-      paddingLeft: theme.spacing(2),
-      paddingRight: theme.spacing(2)
-    },
-    overflow: "hidden",
-    paddingTop: theme.spacing(1),
-    paddingBottom: theme.spacing(1)
-  },
-  cardWrapper: {
-    [theme.breakpoints.down("xs")]: {
-      marginLeft: "auto",
-      marginRight: "auto",
-      maxWidth: 300
-    }
-  },
-  cardWrapperHighlighted: {
-    [theme.breakpoints.down("xs")]: {
-      marginLeft: "auto",
-      marginRight: "auto",
-      maxWidth: 360
-    }
-  }
-});
 
-function PricingSection(props) {
-  const { width, classes } = props;
+const useStyles = makeStyles((theme) => ({
+  '@global': {
+    ul: {
+      margin: 0,
+      padding: 0,
+      listStyle: 'none',
+    },
+  },
+  appBar: {
+    borderBottom: `1px solid ${theme.palette.divider}`,
+  },
+  toolbar: {
+    flexWrap: 'wrap',
+  },
+  toolbarTitle: {
+    flexGrow: 1,
+  },
+  link: {
+    margin: theme.spacing(1, 1.5),
+  },
+  heroContent: {
+    padding: theme.spacing(8, 0, 6),
+  },
+  cardHeader: {
+    backgroundColor:
+      theme.palette.type === 'light' ? theme.palette.grey[200] : theme.palette.grey[700],
+  },
+  cardPricing: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'baseline',
+    marginBottom: theme.spacing(2),
+  },
+  footer: {
+    borderTop: `1px solid ${theme.palette.divider}`,
+    marginTop: theme.spacing(8),
+    paddingTop: theme.spacing(3),
+    paddingBottom: theme.spacing(3),
+    [theme.breakpoints.up('sm')]: {
+      paddingTop: theme.spacing(6),
+      paddingBottom: theme.spacing(6),
+    },
+  },
+}));
+
+const tiers = [
+  {
+    title: 'Drive Lesson',
+    price: '60',
+    description: ['1 Hour Lesson'],
+    buttonText: 'Standard Hourly Rate',
+    buttonVariant: 'contained',
+  },
+  {
+    title: 'Drive Lesson',
+    price: '280',
+    description: ['5 x 1 Hour Lesson Package'],
+    buttonText: 'Save $20',
+    buttonVariant: 'contained',
+  },
+  {
+    title: 'Drive Lesson',
+    price: '550',
+    description: ['10 x 1 Hour Lesson Package'],
+    buttonText: 'Save $50',
+    buttonVariant: 'contained',
+  },
+
+  {
+    title: 'Drive Test',
+    price: '170',
+    description: ['Includes 45 mins Lesson'],
+    buttonText: 'Package 1',
+    buttonVariant: 'contained',
+  },
+  {
+    title: 'Drive Test',
+    price: '190',
+    description: ['Includes 60 mins Lesson'],
+    buttonText: 'Package 2',
+    buttonVariant: 'contained',
+  },
+  {
+    title: 'Drive Test',
+    price: '210',
+    description: ['Includes 90 mins Lesson'],
+    buttonText: 'Package 3',
+    buttonVariant: 'contained',
+  },
+];
+
+export default function Pricing() {
+  const classes = useStyles();
+
   return (
-    <div className="lg-p-top" style={{ backgroundColor: "#FFFFFF" }}>
-      <Typography variant="h3" align="center" className="lg-mg-bottom">
-        Pricing
-      </Typography>
-      <div className={classNames("container-fluid", classes.containerFix)}>
-        <Grid
-          container
-          spacing={calculateSpacing(width)}
-          className={classes.gridContainer}
-        >
-          <Grid
-            item
-            xs={12}
-            sm={6}
-            lg={3}
-            className={classes.cardWrapper}
-            data-aos="zoom-in-up"
-          >
-            <PriceCard
-              title="Standard Rate"
-              pricing={
-                <span>
-                  $60.00
-                  <Typography display="inline"> / hour</Typography>
-                </span>
-              }
-              features={["Pick-Up", "Driving Lesson", "Drop-Off"]}
-            />
-          </Grid>
-          <Grid
-            item
-            //className={classes.cardWrapperHighlighted}
-            className={classes.cardWrapper}
-            xs={12}
-            sm={6}
-            lg={3}
-            data-aos="zoom-in-up"
-            data-aos-delay="200"
-          >
-            <PriceCard
-              //highlighted
-              title="5 x 1 Hour Lesson"
-              pricing={
-                <span>
-                  $270.00
-                  <Typography display="inline"> </Typography>
-                </span>
-              }
-              features={["Save", "$30", ""]}
-            />
-          </Grid>
-          <Grid
-            item
-            className={classes.cardWrapper}
-            xs={12}
-            sm={6}
-            lg={3}
-            data-aos="zoom-in-up"
-            data-aos-delay={isWidthUp("md", width) ? "400" : "0"}
-          >
-            <PriceCard
-              title="10 x 1 hour lesson"
-              pricing={
-                <span>
-                  $530.00
-                  <Typography display="inline"> </Typography>
-                </span>
-              }
-              features={["Save", "$70", ""]}
-            />
-          </Grid>
-          <Grid
-            item
-            className={classes.cardWrapper}
-            xs={12}
-            sm={6}
-            lg={3}
-            data-aos="zoom-in-up"
-            data-aos-delay={isWidthUp("md", width) ? "600" : "200"}
-          >
-            <PriceCard
-              title="Drive Test"
-              pricing={
-                <span>
-                  $190.00
-                  <Typography display="inline"> </Typography>
-                </span>
-              }
-              features={["Including an hour lesson", "", ""]}
-            />
-          </Grid>
-          <Grid
-            item
-            className={classes.cardWrapper}
-            xs={12}
-            sm={6}
-            lg={3}
-            data-aos="zoom-in-up"
-            data-aos-delay={isWidthUp("md", width) ? "600" : "200"}
-          >
-            <PriceCard
-              title="Drive Test"
-              pricing={
-                <span>
-                  $210.00
-                  <Typography display="inline"> </Typography>
-                </span>
-              }
-              features={["Including 90 mins Lesson", "", ""]}
-            />
-          </Grid>
-          <Grid
-            item
-            className={classes.cardWrapper}
-            xs={12}
-            sm={6}
-            lg={3}
-            data-aos="zoom-in-up"
-            data-aos-delay={isWidthUp("md", width) ? "600" : "200"}
-          >
-            <PriceCard
-              title="Express Drive Test"
-              pricing={
-                <span>
-                  $290.00
-                  <Typography display="inline"> </Typography>
-                </span>
-              }
-              features={["2.50 hours Lesson", "90 mins lesson before drive test", ""]}
-            />
-          </Grid>
-          <Grid
-            item
-            className={classes.cardWrapper}
-            xs={12}
-            sm={6}
-            lg={3}
-            data-aos="zoom-in-up"
-            data-aos-delay={isWidthUp("md", width) ? "600" : "200"}
-          >
-            <PriceCard
-              title="Express Drive Test"
-              pricing={
-                <span>
-                  $400.00
-                  <Typography display="inline"> </Typography>
-                </span>
-              }
-              features={["3.50 hours Lesson", "90 mins lesson before drive test", ""]}
-            />
-          </Grid>
+    <React.Fragment>
+
+      {/* Hero unit */}
+      <Container maxWidth="sm" component="main" className={classes.heroContent}>
+        <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+          Pricing
+        </Typography>
+        <Typography variant="h5" align="center" color="textSecondary" component="p">
+
+        </Typography>
+      </Container>
+      {/* End hero unit */}
+      <Container maxWidth="md" component="main">
+        <Grid container spacing={5} alignItems="flex-end">
+          {tiers.map((tier) => (
+            // Enterprise card is full width at sm breakpoint
+            <Grid item key={tier.title} xs={12} sm={tier.title === 'Enterprise' ? 12 : 6} md={4}>
+              <Card>
+                <CardHeader
+
+                  title={tier.title}
+                  action={tier.title === 'Drive Lesson' ? <Car1Icon /> : <Car2Icon />}
+
+                  subheader={tier.subheader}
+                  titleTypographyProps={{ align: 'center' }}
+                  subheaderTypographyProps={{ align: 'center' }}
+                  //action={tier.title === 'Pro' ? <StarIcon /> : null}
+                  className={classes.cardHeader}
+                />
+                <CardContent>
+                  <div className={classes.cardPricing}>
+                    <Typography component="h2" variant="h3" color="textPrimary">
+                      ${tier.price}
+                    </Typography>
+                    <Typography variant="h6" color="textSecondary">
+
+                    </Typography>
+                  </div>
+                  <ul>
+                    {tier.description.map((line) => (
+                      <Typography component="li" variant="subtitle1" align="center" key={line}>
+                        {line}
+                      </Typography>
+                    ))}
+                  </ul>
+                </CardContent>
+                <CardActions>
+                  <Button fullWidth variant={tier.buttonVariant} color="primary">
+                    {tier.buttonText}
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+          ))}
         </Grid>
-      </div>
-    </div>
+
+      </Container>
+
+    </React.Fragment>
   );
 }
-
-PricingSection.propTypes = {
-  width: PropTypes.string.isRequired
-};
-
-export default withStyles(styles, { withTheme: true })(
-  withWidth()(PricingSection)
-);
