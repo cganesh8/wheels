@@ -5,9 +5,9 @@ import { withRouter } from "react-router-dom";
 import {
   TextField,
   Button,
-  Checkbox,
+  //  Checkbox,
   Typography,
-  FormControlLabel,
+  //  FormControlLabel,
   withStyles,
 } from "@material-ui/core";
 import FormDialog from "../../../shared/components/FormDialog";
@@ -104,11 +104,7 @@ function LoginDialog(props) {
               FormHelperTextProps={{ error: true }}
             />
 
-            <FormControlLabel
-              className={classes.formControlLabel}
-              control={<Checkbox color="primary" />}
-            //label={<Typography variant="body1">Remember me</Typography>}
-            />
+
             {status === "verificationEmailSend" ? (
               {/*<HighlightedInformation>
                 We have send instructions on how to reset your password to your

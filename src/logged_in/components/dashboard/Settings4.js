@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 //import ListItemIcon from '@material-ui/core/ListItemIcon';
-import { cyan } from '@material-ui/core/colors';
+import Filter4Icon from '@material-ui/icons/Filter4';
+import { deepOrange } from '@material-ui/core/colors';
 
 import {
     List,
@@ -55,44 +56,77 @@ function Settings4(props) {
     const [option4] = useState("None");
     const [option5] = useState("None");
     const [option6] = useState("None");
-
+    const [option7] = useState("None");
+    const [option8] = useState("None");
+    const [option9] = useState("None");
+    const [option10] = useState("None");
+    const [option11] = useState("None");
+    const [option12] = useState("None");
+    const [option13] = useState("None");
+    const [option14] = useState("None");
+    const [option15] = useState("None");
 
 
     const inputs = [
         {
             state: option1,
-            label: "Before the tester arrives, plug in your seat belt and keep the car on accessory mode",
-            stateName: "option1",
+            label: "Look at the rear/central mirror once about every 30-40 seconds during your drive test",
         },
         {
             state: option2,
-            label: "Indicate left then right, turn on the low beam then high beam and then the hazard lights ",
-            stateName: "option2",
+            label: "Before applying the brakes, look at the rear/central mirror first",
         },
         {
             state: option3,
-            label: "Apply the brake so that all the rear red lights are working",
-            stateName: "option3",
+            label: "Before indicating left, look at the rear/central mirror followed by the left external mirror",
         },
         {
             state: option4,
-            label: "Demonstrate the use of wipers and washers",
-            stateName: "option4",
+            label: "Before indicating right, look at the rear/central mirror followed by the right external mirror",
         },
         {
             state: option5,
-            label: "Show where the front and rear demisters are including the hand brake",
-            stateName: "option5",
+            label: " Approach all intersections slowly, DO NOT rush, look several times before turning into the main road",
         },
         {
             state: option6,
-            label: "When everyone is seated, make sure you start the car before engaging gear or releasing the hand brake",
-            stateName: "option6",
+            label: " Take a little angle to the left or right when turning left or right appropriately",
         },
         {
-            state: option6,
-            label: "if the logbook applies, ensure it is fully completed and consistently signed off",
-            stateName: "option5",
+            state: option7,
+            label: " While turning DO NOT hit or rub against the side kerb",
+        },
+        {
+            state: option8,
+            label: " The moment you finish a turn observe what speed applies on the new road",
+        },
+        {
+            state: option9,
+            label: " If you miss a street, just continue driving, you will be instructed to re-route",
+        },
+        {
+            state: option10,
+            label: " When driving in narrow streets where possible keep 1.5m away from parked vehicles",
+        },
+        {
+            state: option11,
+            label: " When stopping or slowing down behind a parked vehicle, or when you are overtaking a parked or slow moving vehicle you need to look at mirrors first, indicate right and check your blind spot before overtaking",
+        },
+        {
+            state: option12,
+            label: " You will be required to either do a reverse parallel park or a three-point turn",
+        },
+        {
+            state: option13,
+            label: " Indicate left first before approaching the parked vehicle to commence parallel reverse park",
+        },
+        {
+            state: option14,
+            label: " Indicate left first to pull over the left before commencing the 3-point turn",
+        },
+        {
+            state: option15,
+            label: " At the end of Stage I, pull over to stop beside the kerb by indicating left first",
         },
     ];
 
@@ -101,10 +135,10 @@ function Settings4(props) {
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
 
                 <ListItemAvatar>
-                    <Avatar style={{ color: cyan[900] }}>2</Avatar>
+                    <Avatar style={{ color: deepOrange[900] }}> <Filter4Icon /></Avatar>
                 </ListItemAvatar>
 
-                <Typography>Stage 2 - 20 mins</Typography>
+                <Typography>Stage 1 - 10 mins</Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails className={classes.dBlock}>
                 <List disablePadding>

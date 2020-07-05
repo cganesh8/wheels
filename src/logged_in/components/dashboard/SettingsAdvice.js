@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 //import ListItemIcon from '@material-ui/core/ListItemIcon';
-import Filter3Icon from '@material-ui/icons/Filter3';
-import { blue } from '@material-ui/core/colors';
+import { green } from '@material-ui/core/colors';
 
 import {
     List,
@@ -23,11 +22,14 @@ import {
 } from "@material-ui/core";
 
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-//import WorkIcon from "@material-ui/icons/Work";
 import withWidth from "@material-ui/core/withWidth";
 import Bordered from "../../../shared/components/Bordered";
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
+import AssignmentIcon from '@material-ui/icons/Assignment';
+//import ButtonCircularProgress from "../../../shared/components/ButtonCircularProgress";
+
+
 
 const styles = (theme) => ({
     numberInput: {
@@ -46,47 +48,47 @@ const styles = (theme) => ({
     },
 });
 
-function Settings3(props) {
+function SettingsAdvice(props) {
     const { classes } = props;
-    //const [isSaveLoading, setIsSaveLoading] = useState(false);
-    //const [isDefaultLoading, setIsDefaultLoading] = useState(false);
+
     const [option1] = useState("None");
     const [option2] = useState("None");
     const [option3] = useState("None");
     const [option4] = useState("None");
-    const [option5] = useState("None");
-    const [option6] = useState("None");
-    const [option7] = useState("None");
 
 
     const inputs = [
         {
             state: option1,
-            label: "Know the difference between advisory speed and regularity speed signs.",
+            label: "You need to bring along all your local driving license (LDL) and overseas driving licenses (ODL) if applicable. ODLs must be verified with Vicroads",
+            label1: "",
+            label2: "",
+            label3: "",
+            label4: "",
         },
         {
             state: option2,
-            label: "Throughout your drive test, keep below at least 5km/h from maximum speed",
+            label: "If you have an ODL, Please bring the following documents:",
+            label1: "1.	Passport",
+            label2: "2.	Proof of address",
+            label3: "3.	Medicare card, and",
+            label4: "4.	Bank card as secondary proof of residence",
         },
         {
             state: option3,
-            label: "If your drive test is within school times on school days, school speed limits strictly applies in all school zones",
+            label: "If you are below 21 years old and have a log book, ensure that the log book is fully completed including signatures on List of Supervisors Page and Declaration Page. For digital log books, please check with Vicroads.",
+            label1: "",
+            label2: "",
+            label3: "",
+            label4: "",
         },
         {
             state: option4,
-            label: "There are also permanent 40km/h speed zones, drive at about 35km/h in these zones.",
-        },
-        {
-            state: option5,
-            label: "Where there are road works, speed is generally 40km/h if displayed, drive at about 35km/h in these areas. ",
-        },
-        {
-            state: option6,
-            label: "Approach all intersections slowly, DO NOT rush, look several times before turning into the main road",
-        },
-        {
-            state: option7,
-            label: "When turning left or right, maintain an average speed of about 20km/h",
+            label: "Your Learner’s License and Hazard Perception Test results must be valid and not expired",
+            label1: "",
+            label2: "",
+            label3: "",
+            label4: "",
         },
     ];
 
@@ -95,10 +97,10 @@ function Settings3(props) {
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
 
                 <ListItemAvatar>
-                    <Avatar style={{ color: blue[900] }}> <Filter3Icon /> </Avatar>
+                    <Avatar style={{ color: green[500] }}> <AssignmentIcon /> </Avatar>
                 </ListItemAvatar>
 
-                <Typography>Managing Speed – (At all times when driving)</Typography>
+                <Typography>Required Documentation</Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails className={classes.dBlock}>
                 <List disablePadding>
@@ -110,8 +112,13 @@ function Settings3(props) {
                                 divider
                                 key={index}
                             >
+
                                 <ListItemText>
-                                    <Typography variant="body2">{element.label}</Typography>
+                                    <Typography variant="body1">{element.label}</Typography>
+                                    <Typography variant="body2">{element.label1}</Typography>
+                                    <Typography variant="body2">{element.label2}</Typography>
+                                    <Typography variant="body2">{element.label3}</Typography>
+                                    <Typography variant="body2">{element.label4}</Typography>
                                 </ListItemText>
                                 <FormControl variant="outlined">
                                     <ListItemSecondaryAction
@@ -131,10 +138,10 @@ function Settings3(props) {
     );
 }
 
-Settings3.propTypes = {
+SettingsAdvice.propTypes = {
     classes: PropTypes.object.isRequired,
     theme: PropTypes.object.isRequired,
     pushMessageToSnackbar: PropTypes.func,
 };
 
-export default withWidth()(withStyles(styles, { withTheme: true })(Settings3));
+export default withWidth()(withStyles(styles, { withTheme: true })(SettingsAdvice));

@@ -29,7 +29,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 //import SideDrawer from "./SideDrawer";
 //import Balance from "./Balance";
 import NavigationDrawer from "../../../shared/components/NavigationDrawer";
-//import profilePicture from "../../dummy_data/images/profilePicture.jpg";
+import Logo from "../../dummy_data/images/TM2D.jpg";
 
 const styles = theme => ({
   appBar: {
@@ -192,9 +192,18 @@ function NavBar(props) {
     <Fragment>
       <AppBar position="sticky" className={classes.appBar}>
         <Toolbar className={classes.appBarToolbar}>
+<<<<<<< HEAD
         <div>
               Test
             </div>
+=======
+
+          <div>
+            <img src={Logo} alt="Logo" />
+          </div>
+
+
+>>>>>>> 674698acb03671e525c062c042002dbff50ec88a
           <Box display="flex" alignItems="center">
           
             <Hidden smUp>
@@ -208,6 +217,7 @@ function NavBar(props) {
                 </IconButton>
               </Box>
             </Hidden>
+<<<<<<< HEAD
             <Hidden xsDown>
 
               <Typography
@@ -227,6 +237,9 @@ function NavBar(props) {
                 2D
               </Typography>
             </Hidden>
+=======
+
+>>>>>>> 674698acb03671e525c062c042002dbff50ec88a
           </Box>
           <Box
             display="flex"

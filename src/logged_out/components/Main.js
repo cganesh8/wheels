@@ -12,7 +12,7 @@ import DialogSelector from "./register_login/DialogSelector";
 import Routing from "./Routing";
 import smoothScrollTop from "../../shared/functions/smoothScrollTop";
 
-AOS.init({ once: true });
+AOS.init({ once: false });
 
 const styles = (theme) => ({
   wrapper: {
@@ -32,7 +32,11 @@ function Main(props) {
   const selectHome = useCallback(() => {
     smoothScrollTop();
     document.title =
+<<<<<<< HEAD
     "WaVer - Free template for building an SaaS or admin application";
+=======
+      "TM2D - Teach Me 2 Drive";
+>>>>>>> 674698acb03671e525c062c042002dbff50ec88a
     setSelectedTab("Home");
   }, [setSelectedTab]);
 

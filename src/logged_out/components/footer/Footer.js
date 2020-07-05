@@ -127,6 +127,10 @@ const socialIcons = [
         role="img"
 
         class="google-plus"
+<<<<<<< HEAD
+=======
+        //fill="#000000"
+>>>>>>> 674698acb03671e525c062c042002dbff50ec88a
 
         width="24px"
         height="24px"

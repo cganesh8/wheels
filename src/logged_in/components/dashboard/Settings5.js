@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 //import ListItemIcon from '@material-ui/core/ListItemIcon';
-import Filter3Icon from '@material-ui/icons/Filter3';
-import { blue } from '@material-ui/core/colors';
+import Filter5Icon from '@material-ui/icons/Filter5';
+import { yellow } from '@material-ui/core/colors';
 
 import {
     List,
@@ -46,7 +46,7 @@ const styles = (theme) => ({
     },
 });
 
-function Settings3(props) {
+function Settings5(props) {
     const { classes } = props;
     //const [isSaveLoading, setIsSaveLoading] = useState(false);
     //const [isDefaultLoading, setIsDefaultLoading] = useState(false);
@@ -55,39 +55,34 @@ function Settings3(props) {
     const [option3] = useState("None");
     const [option4] = useState("None");
     const [option5] = useState("None");
-    const [option6] = useState("None");
-    const [option7] = useState("None");
-
 
     const inputs = [
         {
             state: option1,
-            label: "Know the difference between advisory speed and regularity speed signs.",
+            label: "When approaching a STOP sign intersection , stop completely just before the STOP LINE for 3 seconds ",
+            stateName: "option1",
         },
         {
             state: option2,
-            label: "Throughout your drive test, keep below at least 5km/h from maximum speed",
+            label: "Before entering the Median Strip, observe all sides and when safe drive into the Median Strip",
+            stateName: "option2",
         },
         {
             state: option3,
-            label: "If your drive test is within school times on school days, school speed limits strictly applies in all school zones",
+            label: "Be vigilant at Traffic Lights intersections especially when turning right with or without the green arrow light",
+            stateName: "option3",
         },
         {
             state: option4,
-            label: "There are also permanent 40km/h speed zones, drive at about 35km/h in these zones.",
+            label: "When changing lanes or moving more than a meter to the left or right, ensure you look into the appropriate blind spot before changing lanes",
+            stateName: "option4",
         },
         {
             state: option5,
-            label: "Where there are road works, speed is generally 40km/h if displayed, drive at about 35km/h in these areas. ",
+            label: "When approaching roundbouts, lookout for vehicles IN the round about or vehicles approaching close to you from the right",
+            stateName: "option5",
         },
-        {
-            state: option6,
-            label: "Approach all intersections slowly, DO NOT rush, look several times before turning into the main road",
-        },
-        {
-            state: option7,
-            label: "When turning left or right, maintain an average speed of about 20km/h",
-        },
+
     ];
 
     return (
@@ -95,10 +90,10 @@ function Settings3(props) {
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
 
                 <ListItemAvatar>
-                    <Avatar style={{ color: blue[900] }}> <Filter3Icon /> </Avatar>
+                    <Avatar style={{ color: yellow[900] }}> <Filter5Icon /></Avatar>
                 </ListItemAvatar>
 
-                <Typography>Managing Speed – (At all times when driving)</Typography>
+                <Typography>Stage 2 - 20 mins</Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails className={classes.dBlock}>
                 <List disablePadding>
@@ -131,10 +126,10 @@ function Settings3(props) {
     );
 }
 
-Settings3.propTypes = {
+Settings5.propTypes = {
     classes: PropTypes.object.isRequired,
     theme: PropTypes.object.isRequired,
     pushMessageToSnackbar: PropTypes.func,
 };
 
-export default withWidth()(withStyles(styles, { withTheme: true })(Settings3));
+export default withWidth()(withStyles(styles, { withTheme: true })(Settings5));
