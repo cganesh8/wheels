@@ -192,20 +192,14 @@ function NavBar(props) {
     <Fragment>
       <AppBar position="sticky" className={classes.appBar}>
         <Toolbar className={classes.appBarToolbar}>
-<<<<<<< HEAD
-        <div>
-              Test
-            </div>
-=======
 
           <div>
             <img src={Logo} alt="Logo" />
           </div>
 
 
->>>>>>> 674698acb03671e525c062c042002dbff50ec88a
           <Box display="flex" alignItems="center">
-          
+
             <Hidden smUp>
               <Box mr={1}>
                 <IconButton
@@ -217,29 +211,6 @@ function NavBar(props) {
                 </IconButton>
               </Box>
             </Hidden>
-<<<<<<< HEAD
-            <Hidden xsDown>
-
-              <Typography
-                variant="h4"
-                className={classes.brandText}
-                display="inline"
-                color="primary"
-              >
-                TM
-              </Typography>
-              <Typography
-                variant="h4"
-                className={classes.brandText}
-                display="inline"
-                color="secondary"
-              >
-                2D
-              </Typography>
-            </Hidden>
-=======
-
->>>>>>> 674698acb03671e525c062c042002dbff50ec88a
           </Box>
           <Box
             display="flex"
