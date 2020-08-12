@@ -66,21 +66,21 @@ const useStyles = makeStyles((theme) => ({
 
 const tiers = [
   {
-    title: 'Drive Lesson',
+    title: 'Drive Lesson 1H',
     price: '60',
     description: ['1 Hour Lesson'],
     buttonText: 'Standard Hourly Rate',
     buttonVariant: 'contained',
   },
   {
-    title: 'Drive Lesson',
+    title: 'Drive Lesson 5H',
     price: '280',
     description: ['5 x 1 Hour Lesson Package'],
     buttonText: 'Save $20',
     buttonVariant: 'contained',
   },
   {
-    title: 'Drive Lesson',
+    title: 'Drive Lesson 10H',
     price: '550',
     description: ['10 x 1 Hour Lesson Package'],
     buttonText: 'Save $50',
@@ -88,21 +88,21 @@ const tiers = [
   },
 
   {
-    title: 'Drive Test',
+    title: 'Drive Test 45M',
     price: '170',
     description: ['Includes 45 mins Lesson'],
     buttonText: 'Package 1',
     buttonVariant: 'contained',
   },
   {
-    title: 'Drive Test',
+    title: 'Drive Test 60M',
     price: '190',
     description: ['Includes 60 mins Lesson'],
     buttonText: 'Package 2',
     buttonVariant: 'contained',
   },
   {
-    title: 'Drive Test',
+    title: 'Drive Test 90M',
     price: '210',
     description: ['Includes 90 mins Lesson'],
     buttonText: 'Package 3',

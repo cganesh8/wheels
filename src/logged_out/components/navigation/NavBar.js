@@ -153,8 +153,8 @@ NavBar.propTypes = {
   handleMobileDrawerClose: PropTypes.func,
   mobileDrawerOpen: PropTypes.bool,
   selectedTab: PropTypes.string,
-  //openRegisterDialog: PropTypes.func.isRequired,
-  openRegisterForm: PropTypes.func.isRequired,
+  openRegisterDialog: PropTypes.func.isRequired,
+  //openRegisterForm: PropTypes.func.isRequired,
   openLoginDialog: PropTypes.func.isRequired
 };
 

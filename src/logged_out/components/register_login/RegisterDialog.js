@@ -39,7 +39,15 @@ function RegisterDialog(props) {
   const [hasTermsOfServiceError, setHasTermsOfServiceError] = useState(false);
   //const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const registerTermsCheckbox = useRef();
-  const [testcenters, setTestCenter] = React.useState('');
+
+  const [name, setName] = React.useState('');
+  const [mobile, setMobile] = React.useState('');
+  const [email, setEmail] = React.useState('');
+  const [suburb, setSuburb] = React.useState('');
+  const [postcode, setPostCode] = React.useState('');
+  const [drivetestdate, setDriveTestDate] = React.useState('');
+  const [drivetesttime, setDriveTestTime] = React.useState('');
+  const [drivetestcenter, setDriveTestCenter] = React.useState('');
 
   const testcenter = [
     {
@@ -84,18 +92,77 @@ function RegisterDialog(props) {
     },
   ];
 
-  const handleChange = (event) => {
-    setTestCenter(event.target.value);
+  const handleNameChange = (event) => {
+
+    if (status === "null") {
+      setStatus(null);
+    }
+    setName(event.target.value);
+
   };
 
+  const handleMobileChange = (event) => {
+
+    if (status === "null") {
+      setStatus(null);
+    }
+    setMobile(event.target.value);
+  };
+
+  const handleEmailChange = (event) => {
+
+    if (status === "null") {
+      setStatus(null);
+    }
+    setEmail(event.target.value);
+  };
+
+  const handleSuburbChange = (event) => {
+
+    if (status === "null") {
+      setStatus(null);
+    }
+    setSuburb(event.target.value);
+  };
+
+  const handlePostCodeChange = (event) => {
+
+    if (status === "null") {
+      setStatus(null);
+    }
+    setPostCode(event.target.value);
+  };
+
+  const handleDriveTestDateChange = (event) => {
+
+    if (status === "null") {
+      setStatus(null);
+    }
+    setDriveTestDate(event.target.value);
+  };
+
+  const handleDriveTestTimeChange = (event) => {
+
+    if (status === "null") {
+      setStatus(null);
+    }
+    setDriveTestTime(event.target.value);
+  };
+
+  const handleDriveTestCenterChange = (event) => {
+
+    if (status === "null") {
+      setStatus(null);
+    }
+    setDriveTestCenter(event.target.value);
+  };
 
   const register = useCallback(() => {
     if (!registerTermsCheckbox.current.checked) {
       setHasTermsOfServiceError(true);
+
       return;
     }
-
-
 
     setStatus(null);
     setIsLoading(true);
@@ -118,6 +185,7 @@ function RegisterDialog(props) {
       onFormSubmit={(e) => {
         e.preventDefault();
         register();
+
       }}
       hideBackdrop
       hasCloseIcon
@@ -136,12 +204,8 @@ function RegisterDialog(props) {
                 label="Name"
                 autoFocus
                 autoComplete="off"
-                type="text"
-                onChange={() => {
-                  if (status === "null") {
-                    setStatus(null);
-                  }
-                }}
+                type="text" value={name}
+                onChange={handleNameChange}
                 FormHelperTextProps={{ error: true }}
               />
             </Grid>
@@ -155,12 +219,8 @@ function RegisterDialog(props) {
                 error={status === "null"}
                 label="Mobile"
                 autoComplete="off"
-                type="text"
-                onChange={() => {
-                  if (status === "null") {
-                    setStatus(null);
-                  }
-                }}
+                type="text" value={mobile}
+                onChange={handleMobileChange}
                 FormHelperTextProps={{ error: true }}
               />
             </Grid>
@@ -176,12 +236,8 @@ function RegisterDialog(props) {
                 label="abc@gmail.com"
                 //autoFocus
                 autoComplete="off"
-                type="email"
-                onChange={() => {
-                  if (status === "invalidEmail") {
-                    setStatus(null);
-                  }
-                }}
+                type="email" value={email}
+                onChange={handleEmailChange}
                 FormHelperTextProps={{ error: true }}
               />
             </Grid>
@@ -196,12 +252,9 @@ function RegisterDialog(props) {
                 error={status === "null"}
                 label="Suburb"
                 autoComplete="off"
-                type="text"
-                onChange={() => {
-                  if (status === "null") {
-                    setStatus(null);
-                  }
-                }}
+                type="text" value={suburb}
+                onChange={handleSuburbChange}
+
                 FormHelperTextProps={{ error: true }}
               />
             </Grid>
@@ -215,12 +268,8 @@ function RegisterDialog(props) {
                 error={status === "null"}
                 label="Post Code"
                 autoComplete="off"
-                type="text"
-                onChange={() => {
-                  if (status === "null") {
-                    setStatus(null);
-                  }
-                }}
+                type="text" value={postcode}
+                onChange={handlePostCodeChange}
                 FormHelperTextProps={{ error: true }}
               />
             </Grid>
@@ -240,13 +289,10 @@ function RegisterDialog(props) {
                 label=""
                 //autoFocus
                 autoComplete="off"
-                type="date"
-                onChange={() => {
-                  if (status === "invalidDate") {
-                    setStatus(null);
-                  }
-                }}
-                FormHelperTextProps={{ error: true }}
+                type="date" value={drivetestdate}
+                onChange={handleDriveTestDateChange}
+                FormHelperTextProps={{ error: true }
+                }
               />
             </Grid>
 
@@ -257,42 +303,15 @@ function RegisterDialog(props) {
                 margin="normal"
                 //required
                 fullWidth
-                error={status === "invalidEmail"}
+                error={status === "invalidTime"}
                 label="hh:mm"
                 //autoFocus
                 autoComplete="off"
-                type="time"
-                onChange={() => {
-                  if (status === "invalidEmail") {
-                    setStatus(null);
-                  }
-                }}
+                type="time" value={drivetesttime}
+                onChange={handleDriveTestTimeChange}
                 FormHelperTextProps={{ error: true }}
               />
             </Grid>
-
-            {/*DriveTest Center
-
-            <TextField
-              id="outlined-select-currency-native"
-              select
-              label="Native select"
-              value={currency}
-              onChange={handleChange}
-              SelectProps={{
-                native: true,
-              }}
-              helperText="Please select your currency"
-              variant="outlined"
-            >
-              {currencies.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </TextField>
-
-            */}
 
             <Grid item xs={12} >
 
@@ -300,8 +319,8 @@ function RegisterDialog(props) {
                 id="test-center"
                 select
                 label="Vicroads Test Center"
-                value={testcenters}
-                onChange={handleChange}
+                value={drivetestcenter}
+                onChange={handleDriveTestCenterChange}
                 SelectProps={{
                   native: true,
                 }}

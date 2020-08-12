@@ -126,7 +126,7 @@ const socialIcons = [
       <svg
         role="img"
 
-        class="google-plus"
+        className="google-plus"
         //fill="#000000"
 
         width="24px"
