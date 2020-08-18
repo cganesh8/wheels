@@ -176,6 +176,12 @@ function RegisterDialog(props) {
     registerTermsCheckbox,
   ]);
 
+  const checkconnection = () => {
+    fetch('http://localhost:3000/')
+  //  .then(response => response.json())
+    .then(console.log)
+  }
+
   return (
     <FormDialog
       loading={isLoading}
@@ -185,7 +191,7 @@ function RegisterDialog(props) {
       onFormSubmit={(e) => {
         e.preventDefault();
         register();
-
+        checkconnection();
       }}
       hideBackdrop
       hasCloseIcon
