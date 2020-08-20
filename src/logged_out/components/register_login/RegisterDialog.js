@@ -176,10 +176,29 @@ function RegisterDialog(props) {
     registerTermsCheckbox,
   ]);
 
-  const checkconnection = () => {
-    fetch('http://localhost:3000/')
+  //const checkconnection = () => {
+  //  fetch('http://localhost:3000/')
   //  .then(response => response.json())
-    .then(console.log)
+  //  .then(console.log)
+  //}
+
+  const registerLearner = () => {
+    fetch('http://localhost:3000/register', {
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: name,
+        mobile: mobile,
+        email: email,
+        enrolled: new Date(),
+        suburb: suburb,
+        postcode: postcode,
+        dtdate: drivetestdate,
+        dttime: drivetesttime,
+        dtcenter: drivetestcenter,
+        source: 'TM2D'
+      })
+    })
   }
 
   return (
@@ -191,7 +210,7 @@ function RegisterDialog(props) {
       onFormSubmit={(e) => {
         e.preventDefault();
         register();
-        checkconnection();
+        registerLearner();
       }}
       hideBackdrop
       hasCloseIcon
