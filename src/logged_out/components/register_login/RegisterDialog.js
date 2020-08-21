@@ -197,8 +197,22 @@ function RegisterDialog(props) {
         dttime: drivetesttime,
         dtcenter: drivetestcenter,
         source: 'TM2D'
+
+        //.then look at Andrei code
+        //status = "account created" example"
+        //.then(response => response.json())
+        //.then(user => {
+        //  if (user) {
+        //    this.props.loadUser(user)
+        //    this.props.onRouteChange('home');
+
       })
     })
+    // .then(response => response.json())
+    //console.log(response)
+    //if (response === 'learner record successfully created') {
+    status: "accountCreated"
+    //}
   }
 
   return (
@@ -415,7 +429,7 @@ function RegisterDialog(props) {
               </HighlightedInformation>
             ) : (
                 <HighlightedInformation>
-                  Registration is disabled until we go live.
+                  Press REGISTER below to Confirm.
                 </HighlightedInformation>
               )}
           </Grid>
