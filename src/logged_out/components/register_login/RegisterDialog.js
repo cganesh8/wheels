@@ -199,12 +199,15 @@ function RegisterDialog(props) {
         source: 'TM2D'
       })
     })
-    .then(response => response.json())
-    .then(response => {
-      if (response === 'learner record exists in database') {
-        setStatus("accountCreated");
-      }
-    })
+      .then(response => response.json())
+      .then(response => {
+        if (response === 'learner record exists in database') {
+          setStatus("mobileExist");
+        }
+        else {
+          setStatus("newLearner");
+        }
+      })
   }
 
   return (
@@ -414,16 +417,27 @@ function RegisterDialog(props) {
                 service.
               </FormHelperText>
             )}
-            {status === "accountCreated" ? (
+
+            {status === "mobileExist" ? (
               <HighlightedInformation>
-                We have created your account. Please click on the link in the
-                email we have sent to you before logging in.
+                Your mobile number is already registered. Please key in new mobile number.
               </HighlightedInformation>
             ) : (
                 <HighlightedInformation>
                   Press REGISTER below to Confirm.
                 </HighlightedInformation>
               )}
+
+            {status === "newLearner" ? (
+              <HighlightedInformation>
+                Learner successfully registered. An instructor will contact you soon.
+              </HighlightedInformation>
+            ) : (
+                <HighlightedInformation>
+                  Press REGISTER below to Confirm.
+                </HighlightedInformation>
+              )}
+
           </Grid>
         </Fragment>
       }
