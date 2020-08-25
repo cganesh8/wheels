@@ -378,6 +378,8 @@ function RegisterDialog(props) {
                   inputRef={registerTermsCheckbox}
                   onChange={() => {
                     setHasTermsOfServiceError(false);
+                    setStatus(null) //initialise display message 25-Aug-2020
+                    //so mobileExist and NewLearner msg is consistent
                   }}
                 />
               }
@@ -407,6 +409,7 @@ function RegisterDialog(props) {
             />
             {hasTermsOfServiceError && (
               <FormHelperText
+
                 error
                 style={{
                   display: "block",
@@ -418,25 +421,23 @@ function RegisterDialog(props) {
               </FormHelperText>
             )}
 
-            {status === "mobileExist" ? (
+            {status === "mobileExist" && !hasTermsOfServiceError ? (
               <HighlightedInformation>
                 Your mobile number is already registered. Please key in new mobile number.
-              </HighlightedInformation>
-            ) : (
-                <HighlightedInformation>
-                  Press REGISTER below to Confirm.
-                </HighlightedInformation>
-              )}
+              </HighlightedInformation>) : ("")
+            }
 
-            {status === "newLearner" ? (
+            {status === "newLearner" && !hasTermsOfServiceError ? (
               <HighlightedInformation>
                 Learner successfully registered. An instructor will contact you soon.
-              </HighlightedInformation>
-            ) : (
-                <HighlightedInformation>
-                  Press REGISTER below to Confirm.
-                </HighlightedInformation>
-              )}
+              </HighlightedInformation>) : ("")
+            }
+
+            {status === "null" && !hasTermsOfServiceError ? (
+              <HighlightedInformation>
+                Press REGISTER below to Confirm.
+              </HighlightedInformation>) : ("")
+            }
 
           </Grid>
         </Fragment>
