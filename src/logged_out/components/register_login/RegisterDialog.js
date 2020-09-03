@@ -433,11 +433,13 @@ function RegisterDialog(props) {
               </HighlightedInformation>) : ("")
             }
 
+            {/*
             {status === "null" && !hasTermsOfServiceError ? (
               <HighlightedInformation>
                 Press REGISTER below to Confirm.
               </HighlightedInformation>) : ("")
             }
+            */}
 
           </Grid>
         </Fragment>

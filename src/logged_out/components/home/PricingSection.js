@@ -66,49 +66,57 @@ const useStyles = makeStyles((theme) => ({
 
 const tiers = [
   {
-    title: 'Drive Lesson',
+    title: 'Drive Lesson 1H',
     price: '60',
     description: ['1 Hour Lesson'],
     buttonText: 'Standard Hourly Rate',
     buttonVariant: 'contained',
+    checkTitle: 'Lesson'
   },
   {
-    title: 'Drive Lesson',
+    title: 'Drive Lesson 5H',
     price: '280',
     description: ['5 x 1 Hour Lesson Package'],
     buttonText: 'Save $20',
     buttonVariant: 'contained',
+    checkTitle: 'Lesson'
   },
   {
-    title: 'Drive Lesson',
+    title: 'Drive Lesson 10H',
     price: '550',
     description: ['10 x 1 Hour Lesson Package'],
     buttonText: 'Save $50',
     buttonVariant: 'contained',
+    checkTitle: 'Lesson'
   },
 
   {
-    title: 'Drive Test',
+    title: 'Drive Test 45M',
     price: '170',
-    description: ['Includes 45 mins Lesson'],
+    description: ['Includes 45 Mins Lesson'],
     buttonText: 'Package 1',
     buttonVariant: 'contained',
+    checkTitle: 'Test'
   },
   {
-    title: 'Drive Test',
+    title: 'Drive Test 60M',
     price: '190',
-    description: ['Includes 60 mins Lesson'],
+    description: ['Includes 60 Mins Lesson'],
     buttonText: 'Package 2',
     buttonVariant: 'contained',
+    checkTitle: 'Test'
   },
   {
-    title: 'Drive Test',
+    title: 'Drive Test 90M',
     price: '210',
-    description: ['Includes 90 mins Lesson'],
+    description: ['Includes 90 Mins Lesson'],
     buttonText: 'Package 3',
     buttonVariant: 'contained',
+    checkTitle: 'Test'
   },
 ];
+
+
 
 export default function Pricing() {
   const classes = useStyles();
@@ -135,7 +143,7 @@ export default function Pricing() {
                 <CardHeader
 
                   title={tier.title}
-                  action={tier.title === 'Drive Lesson' ? <Car1Icon /> : <Car2Icon />}
+                  action={tier.checkTitle === 'Lesson' ? <Car1Icon /> : <Car2Icon />}
 
                   subheader={tier.subheader}
                   titleTypographyProps={{ align: 'center' }}

@@ -46,26 +46,47 @@ function LoginDialog(props) {
     status,
   } = props;
   const [isLoading, setIsLoading] = useState(false);
+  //const [mobile, setMobile] = React.useState('');
   //const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   //const loginEmail = useRef();
   //const loginPassword = useRef();
   const loginMobilePhone = useRef();
   //const loginDriveTestDate = useRef();
 
+
   const login = useCallback(() => {
-    setIsLoading(true);
-    setStatus(null);
-    if (loginMobilePhone.current.value !== "0412886730") {
-      setTimeout(() => {
-        setStatus("invalidMobilePhone");
-        setIsLoading(false);
-      }, 1500);
-    } else {
-      setTimeout(() => {
-        history.push("/c/dashboard");
-      }, 150);
-    }
+
+    //connect to server localhost:3000
+
+    fetch('http://localhost:3000/login', {
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        mobile: loginMobilePhone.current.value,
+      })
+    })
+
+      .then(response => response.json())
+      .then(response => {
+        setIsLoading(true);
+        setStatus(null);
+
+        if (response === "LoginNotOK") {
+          setTimeout(() => {
+            setStatus("invalidMobilePhone");
+            setIsLoading(false);
+          }, 1500);
+        } else {
+          //here response === "LoginOK"
+          setTimeout(() => {
+            history.push("/c/dashboard");
+          }, 150);
+
+        }
+      })
+
   }, [setIsLoading, loginMobilePhone, history, setStatus]);
+
 
   return (
     <Fragment>
@@ -99,11 +120,10 @@ function LoginDialog(props) {
               }}
               helperText={
                 status === "invalidMobilePhone" &&
-                "This mobile phone number isn't associated with our Register."
+                "This mobile is not Registered"
               }
               FormHelperTextProps={{ error: true }}
             />
-
 
             {status === "verificationEmailSend" ? (
               {/*<HighlightedInformation>
@@ -115,6 +135,7 @@ function LoginDialog(props) {
                   Mobile: <b>0412886730</b>
                 </HighlightedInformation>
               )}
+
           </Fragment>
         }
         actions={
